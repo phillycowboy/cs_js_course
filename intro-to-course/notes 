@@ -1,0 +1,42 @@
+js, ECMA, TC39: what do they mean? 
+__________________________________________________
+
+JavaScript - programming lanugae, keeps getting updated, there isnt a single JS, implemented by all the  different browsers that 
+are out ther. 
+
+ECMA -- international group that is in charge of all sorts of different standards not just for programming 
+ECMAscript -- is a specification for a programming lanugae. text doc for specification for programming lanugaes 
+
+TC39 the deciders of ECMA organazation 
+
+ES stands for ECMAscript the version you are currently using for JS is ES6 they didnt intend to update it annually 
+
+since there is no download to get to use JS, JS is supported through your browser that you are using.  Different browsers host different versions of JS
+Chrome uses a V8 js engine 
+
+It is not just one language it is a variation of lanugaes
+
+JS Checker and Browser supporter https://caniuse.com/
+
+TOOLS --
+__________________________________________________
+
+USE CHROME FOR WEB BROWSER!!!!!!!!!! 
+
+VS code 
+
+MDN--
+__________________________________________________
+
+Mozilla Developer Network 
+
+Closest thing to JS docs that we have 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+
+
+
+
+
+
