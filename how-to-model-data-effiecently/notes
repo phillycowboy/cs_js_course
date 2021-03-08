@@ -97,6 +97,330 @@ That is because strings are immutable in JS meaning once its value has been set 
 String Methods -- 
 __________________________________________________
 
+Strings come with a set of built in methods, which are actions that can be performed on or with that partiular string.  We can do things like: 
+- Searching within a string 
+-Replacing parts of a string 
+- changing case (upper/lower)
+
+Syntax- thing.method()
+
+Strings are not the only things that have methods, there are built in number methods 
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+Available string methods 
+
+let str = "you are so grounded mr";
+str.toUpperCase()
+//"YOU ARE SO GROUNDED MR"
+str
+//"you are so grounded mr"
+
+The original string is unchanged because strings are immuteable. What we can do is save the changed string to a new variable and call it 
+whenever we need it. 
+
+let msg = 'I am king';
+let yellMsg = msg.toUpperCase(); // "I AM KING
+
+let angry = "LeAvE mE aLoNe"
+angry.toLowerCase(); // 'leave me alone'   --just calling a method on a string 
+
+angry; // "LeAvE mE aLoNe"  -- still unchanged. 
+
+toLowerCase, toUpperCase
+
+Trim --- 
+
+removes the whitespace in a string that has been created 
+
+str = "hello        "
+str.trim(); // "hello"
+
+MORE String Methods but with arguments -- 
+__________________________________________________
+
+Some methods accept arguments that modify their behavior.  We pass these arguments inside of the parentheses. 
+
+thing.method(argument)
+
+what are you replacing and what do you want to replace it with? 
+
+indexOf -- will tell you where in a given string an character occurs 
+
+
+let tvShow = 'catdog';
+
+tvShow.indexOf('cat'); // 0  cat comes ar the very beginning of a string 
+tvShow.indexOf('dog'); // 3  dog comes at the end   -- they are not just looking for the letter, but the whole word. 'cat' or 'dog'
+tvShow.indexOf('z'); // -1 not found 
+
+indexOf is case sensitive and will only look for what you tell it too! Also it will only return the first match if there are two letters 
+that are the same for example: 
+
+"baseball".indexOf("b")
+//0
+"Baseball".indexOf("b")
+//4  -- it looked and retruned the only lowercase b 
+
+-1 is the representation of not found. 
+
+Slice -- takes pieces of an existing string and slices it 
+
+if we pass slice() and index of four, it will start at the index of 4 and return the rest of the string 
+
+"Baseball".slice(4)
+//"ball"
+
+With slice you can also pass in two numbers, where to start and where to end with indices 
+
+"Baseball".slice(0, 4)
+//"Base"
+
+If you have data that repeats a certain pattern and you want to isolate some of it, you would use slice 
+
+Replace -- 
+
+let annoyingLaugh = "teehee so funny, teehee!"
+annoyingLaugh.replace("teehee", "haha");
+
+//"haha so funny, teehee"
+
+It only replaces the first one--there is a way to replace all occurences in a string. but it involes a regex, or you could use replaceAll
+
+Tell the method what you are trying to find and then replace it with what you pass in.  If it cant find what you pass in initially it wont 
+replace it. 
+
+STRINGS QUIZ -- 
+
+__________________________________________________
+what is the value of age? 
+
+const age = "5" + "4";
+//"54"
+
+what does this evaluate to? 
+
+"pecan pie"[7];
+//"i"
+
+what does this evaluate to? 
+
+"PUP"[3];
+
+//undefined
+
+what is the value of song? 
+
+let song = "london calling";
+song.toUpperCase();
+// song is still "london calling" because strings are  immutable but if we were to set what the value is of calling toUpperCase on song, 
+then we would have a variable with the value of toUpperCase invoked like: 
+
+let yellSong = song.toUpperCase();
+//"LONDON CALLING";
+
+what is the value of cleanedInput? 
+
+let userInput = "    TODD@gmail.com";
+let cleanedInput = userInput.trim().toLowerCase();
+//"todd@gmail.com"
+
+what is the value of index? 
+
+let park = 'Yellowstone';
+const index = park.indexOf('Stone')
+// -1 
+
+what is the value of index 
+
+let yell = 'GO AWAY!!';
+let index = yell.indexOf('!')
+// 7 
+
+what does this evaluate to? 
+
+'GARBAGE!'.slice(2).replace("B", '');
+//"RAGE"
+
+String Escape Chracters -- 
+__________________________________________________
+
+
+String Escapes -- a combination of chracters that have a different meaing within a string 
+
+- \n - newline 
+- \' - single quote  
+- \" - double quote  
+- \\ - backslash   
+
+'he said I ain\t happy'
+// 'he said I ain't happy'
+
+"he said \" I ain\t happy""
+// "he said "I ain't happy""
+
+"eggs\n bread\n milk"
+
+// "eggs
+    bread
+    milk"
+
+"\\"
+// "\"
+
+these are not that commonly used, just use double quotes and if you need anyhting else quoted just wrap that in single quotes 
+
+
+String Template Literals -- 
+__________________________________________________
+
+String Template Literals -- template Literals are strings that allow embbeded expressions, which will be evaluated and then turned into a regular string.
+
+`I counted ${3 + 4} sheep!`
+//"I counted 7 sheep!"
+
+Special strings that we can add to by passing in data, other strings, numbers, etc. 
+
+Notice that we are using back ticks to indicated what is to be interpolated not single quotes  
+
+
+let base = 100;
+let intrest = base + 20;
+`You owe me ${base}`
+// "You owe me 100"
+`You owe me ${intrest}`
+//"You owe me 120"
+
+This will not work in a regular string, you must use backticks and curly braces 
+
+let item = 'cucumbers';
+let price = 1.99;
+let quantity = 4; 
+
+`You bought ${quantity} ${item}, total price: $${price*quantity}`;
+//"You bought 4 cucumbers, total price: $7.96"
+
+const minAge = 21 
+let yourAge = 11
+
+`You must be ${minAge} or older to enter, come back in ${minAge - yourAge} years!`
+"You must be 21 or older to enter, come back in 10 years!"
+
+Null and undefined -- 
+__________________________________________________
+
+Null and undefined are also primitive types: 
+
+Null - intentional absence of any value 
+       must be assigned
+
+       we can assign let loggedInUser = null;
+
+       then when someone does log in we can set it to loggedInUser = 'Alan Rickman'
+
+       when a user logs out it will go back to null 
+
+undefined - variables that do not have an assigned value are undefined. 
+
+normally undefined is a value that JS gives us back. If we initialize a variable but we dont give it a value, it will create space in memory for 
+it but it will pass it the placeholder value of undefined 
+
+let color; 
+
+color
+//undefined 
+
+
+The Math Object and Random Numbers -- 
+__________________________________________________
+
+Math Object - contains properties and methods for mathematical constants and functions 
+
+Math.PI // 3.14
+
+Rounding a number 
+
+Math.round(4.9) // 5 
+
+Absolute Value 
+
+Math.abs(-456) // 456 
+
+Raises 2 to the 5th power 
+
+Math.pow(2, 5) // 32 
+
+Removes decimal 
+
+Math.floor(3.99999) // 3 
+
+Math.random() gives us a random decimal between 0 and 1 but not returning 1 
+
+
+Random Integers -- 
+
+const step1 = Math.random()
+
+const step2 = step1 * 10 
+
+const step3 = Math.floor(step2)
+
+const step 4 = step3 + 1 
+
+Math.floor(Math.random() * 10) + 1  -- is what you ultimately want to call; 
+
+This will generate a number between 1-10 
+
+
+typeof Operator in JS -- 
+__________________________________________________
+
+typeof 99 
+//"number"
+
+it takes in a piece of data and returns the type of that data. 
+
+typeof is just an operator just like + -.  But it is just a one sided operator typeof 99, where 
+
+others maybe two sided 1 + 1 
+
+
+
+parseInt & parseFloat --
+
+__________________________________________________
+
+Use to parse strings into numbers 
+
+parseInt('21')
+//21 
+
+parseInt('21') + 1
+//22 
+
+parseFloat('33.5')
+//33.5
+
+parseInt('$21')
+//NaN  -- does not like when you try and pass other symbols in with strings 
+
+But if your string starts with a number than you it will parse that string into an integer 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
