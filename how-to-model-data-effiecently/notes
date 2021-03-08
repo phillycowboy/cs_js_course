@@ -1,2 +1,103 @@
 Booleans Intro -- 
 __________________________________________________
+boolean is one of the primitive types.  Simply they are true or false values. 
+
+let isLoggedIn = true; 
+let gameOver = false; 
+const isWaterWet = true; 
+
+We can store a boolean value into a variable 
+
+you can change the value of a variable to a boolean or back to whatever type it was with let.  THIS DOES NOT MEAN ITS A GOOD IDEA!
+
+
+Strings --
+__________________________________________________
+
+a String is also a primitive type, they come up all the time. In JS strings are just pieces of text, or strings of characters, we 
+wrap them in quotes. 
+
+
+let firstName = "Ziggy";
+let msg = "please do not feed the chimps!";
+let animal = 'Dumbo Octopus';
+let bad = "this is wrong';   THIS WONT WORK 
+
+there is an operator in JS called - typeof - you pass it a value of something and it will return its type in JS
+
+so we can use quotes with in a string but we have to use double or single quotes to start and end the string first before we quote what is being 
+said within the string 
+
+'he said "haha" '  valid 
+
+"he said 'lol' "  valid 
+
+"she said "omg" "  cannot do this because JS will read it as we are starting and ending two serperate strings and we just have this omg floating
+around. 
+
+String Operators 
+
+firstName + lastName 
+// BenMurphy -- this is the addition operator what is happening here is concatanation 
+
+there are some weird things when you start mixing types with the addition operator
+
+"hi" + 1 
+//"hi1"
+
+Sting Indices -- 
+__________________________________________________
+
+Strings are indexed 
+"C H I C K E N"
+ 0 1 2 3 4 5 6
+
+ each character has a corresponding index a postional number. 
+
+
+let msg = "hello"
+msg[1]
+//"e"
+
+
+Each indice starts with zero and goes left to right. 
+
+Each string has properties, properties are just values that we can all on types of objects. 
+
+msg.length
+//5 
+
+let mySong = "Surfin' USA"
+mySong.length 
+
+//11 
+
+If we want a certain value from the string we can use square brackets, and pass in a number corresponding to the position 
+
+mySong[0]
+//"S"
+
+But what happens when we try to access mySong at the indice of its length 11 
+
+mySong[11]
+//undefined 
+
+Basically what JS is telling us is that there is nothing there. There isnt a charcter at index 11 or anything past that for that matter. 
+So the length is always one greater than the last index. 
+
+So for that we could always just grab the last character this way. 
+
+mySong[mySong.length - 1];
+//"A"
+
+If we wanted to change the value of a string by passing in an index number on the string object and setting it equal to another value, we cant 
+
+That is because strings are immutable in JS meaning once its value has been set it is not changeable. 
+
+String Methods -- 
+__________________________________________________
+
+
+
+
+
