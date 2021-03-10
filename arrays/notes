@@ -59,11 +59,42 @@ MDN reference guide for arrays and methods for them on the left hand side https:
 MORE ARRAY METHODS -- 
 __________________________________________________
 concat - merge arrays 
-includes - look for a value 
-indexOf - just like str.indexOf
-join - creates a string from an array 
-reverse - revrses an array 
-slice - copy portion of an array 
-splice - remove/replace elements 
-sort - sorts an array 
+includes - look for a value -- returns true or false -- use if you just want to see if it is there and you dont care about the value 
+indexOf - just like str.indexOf -- will return the index of where the value was found. 
+join - creates a string from an array -- will always turn it into a string 
+reverse - revrses an array -- will mutate the original order if called 
+slice - copy portion of an array -- it takes a portion of an array and makes a new array with the method does not mutate original array 
+splice - remove/replace elements -- either adds. removes or replaces elements in an array 
+sort - sorts an array -- 
 
+
+INTRO TO REFERENCE TYPES -- 
+__________________________________________________
+
+Goals : 
+-Work with arrays 
+-write object literals 
+- understand reference types 
+- use common array and object methods 
+
+
+USING CONST WTIH ARRAYS -- 
+__________________________________________________
+
+if you use const with an array if will always point to the reference of that array in memory.  you may update the value of the internal data.  
+but you cannot update the array itself you cannot have two const arrays of the same name. 
+
+
+WORKING WITH NESTED ARRAYS -- 
+__________________________________________________
+
+we can store arrays inside other arrays. 
+
+const colors = [
+    [red, crimson],
+    [orange, dark orange],
+    [yellow, golden rod],
+    [green, olive],
+    [blue, navy blue],
+    [purple, orchid]
+]
