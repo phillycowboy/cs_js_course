@@ -2,3 +2,93 @@ Making Decisions in JS --
 
 __________________________________________________
 
+How do we implement logic, or make decisions so we get different outcomes from our code? 
+
+GOALS - 
+
+- Understand Comparison Operators 
+- Write Conditionals 
+- Work with Boolean Operators 
+
+Comparison Operators -- 
+__________________________________________________
+
+> // greater than 
+< // less than 
+>= // greater than or equal to 
+<= // less than or equal to 
+== // equality 
+!= // not equal 
+=== // strict equality 
+!== // strict non-equality 
+
+-2 > 1 // false  --- notice that we get a boolean back, all of these operators will return true or false 
+
+10 < 999 // true 
+
+2 >= 2 // true 
+
+2 >= 5 // false
+
+55.1 <= 55.5 // true 
+
+"hello".length >= "hello!".length // false 
+
+
+DOUBLE EQUALS -- 
+
+__________________________________________________
+
+== vs ===  what is the difference? 
+
+== (double equals)
+-checks for equality of value, but not equality of type 
+-it coerces both value to the same type and then compares them
+-this can lead to some unexpected results! 
+
+4 == 4 // true 
+
+"a" == "a" // true 
+
+false == false // true 
+
+7 == '7' // true ----where coercion comes in,JS is converting them to a similar type and deciding that they are equal. 
+
+0 == 's' // false 
+
+0 == '' // true 
+
+0 == false // true ----two different values but they are equal when we use double equals 
+
+null == undefined // true -------same here 
+
+
+TRIPLE EQUALS -- 
+__________________________________________________
+
+checks for equality of value and type, it will not try and coerce the value and type of two different values 
+
+2 === '2' // false 
+
+2 == '2' // true 
+
+0 == false // true 
+
+0 === false // false ---triple equals is stricter hence the name strict equals 
+
+
+Generally 99.99999999999999% of the time you want to use triple equals to check two values 
+
+1 != 2 //true 
+
+1 != '1' //false 
+
+    BUT 
+1 !== '1' // true 
+
+
+RUNNING CODE FROM A FILE/SCRIPT -- 
+
+__________________________________________________
+
+
