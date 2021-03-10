@@ -1,0 +1,69 @@
+ARRAYS AND OBJECTS -- 
+__________________________________________________
+
+Collections of Data
+
+GOALS : 
+- Work with Arrays 
+- Write Object Literals 
+- Understand Reference Types 
+- Use common Array/Object methods 
+
+Arrays -- 
+
+Ordered collections of values : 
+- List of comments on IG post 
+- Collection of levels in a game 
+- Songs in a playlist 
+
+Think of a pill container- one slot has a pill and so on and so forth. 
+
+Creating Arrays - 
+
+to make an empty array 
+let students = [];
+
+an array of strings 
+let colors = ['red', 'orange', 'yellow'];
+
+an array of numbers 
+let lottoNums = [19, 22, 56, 12, 51];
+
+a mixed array 
+let stuff = [true, 68, 'cat', null];
+
+Arrays are Indexed -- 
+__________________________________________________
+
+see in app2.js 
+
+
+Modifying Arrays -- 
+__________________________________________________
+
+Unlike strings arrays are muteable, meaning we can change them whenever we want. 
+
+see examoles is app2.js 
+
+
+Array Methods -- 
+__________________________________________________
+
+- Push -- add to the end 
+- Pop -- remove from the end 
+- Shift -- remove from start 
+- Unshift --add to start 
+
+MDN reference guide for arrays and methods for them on the left hand side https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array
+
+MORE ARRAY METHODS -- 
+__________________________________________________
+concat - merge arrays 
+includes - look for a value 
+indexOf - just like str.indexOf
+join - creates a string from an array 
+reverse - revrses an array 
+slice - copy portion of an array 
+splice - remove/replace elements 
+sort - sorts an array 
+
