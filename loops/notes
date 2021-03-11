@@ -1,3 +1,67 @@
 LOOPS INTRO!!!!! 
 _________________________________________________________
 
+How do we get code to run mulitple times unitl something is satisfied or completed? 
+
+Looping 
+
+How do we get a game to run its loop until game over?  Not just in console 10 times but for the code itself. 
+
+GOALS : 
+
+- write FOR loops 
+- write WHILE loops 
+- avoid INFINITE loops 
+- and iterate over arrays and objects 
+
+LOOPS- 
+doing things repeatadley 
+- Loops allow us to repeat code
+    - print 'hello' ten times 
+    -sum all numbers in an array 
+- There are multiple types of loops 
+    - for loop 
+    -while loop 
+    -for ... of loop 
+    -for...in loop 
+
+
+    FOR LOOP -- 
+    _________________________________________________________
+
+    for soemthing set a counter, tell the counter when to stop, tell counter how to count 
+    run a block of code: 
+
+    for(set counter: let i = 0; tell counter when to stop: i <=10; tell counter how to count: i++){
+        run some block of code: console.log(i);
+    }
+
+
+
+INFINITE LOOP!---- 
+_________________________________________________________
+
+so an infinite loop is a loop where the second condition is never met so it will always keep running 
+
+DO NOT RUN THIS CODE -- or do i dont care im not your dad. 
+
+for(let i = 20; i >= 0; i++){
+    console.log(i);
+}
+
+in this case i will ALWAYS be GREATER THAN 0 because it is equal to 20. 
+
+the thing to remeber with loops is to make sure that you are going in the right direction 
+
+make sure your second statement makes sense will i ever be less than or equal to this number, will it ever be greater, if you are counting by thrids
+will it ever reach or even touch an even number. 
+
+also avoid equality and non equality you may never reach that number !==, !=, ==, === 
+
+
+FOR LOOPS AND ARRAYS -- 
+_________________________________________________________
+
+to loop over an array start at 0 and continue to the last index (length -1)
+
+START HERE TOMORROW WITH COLT 
