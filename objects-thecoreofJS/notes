@@ -3,5 +3,66 @@ OBJECTS THE CORE OF JS --
 __________________________________________________
 Intro to Objects - 
 
-START HERE TOMORROW 
+How would you hold multiple users info with out using an array, how would you access it? You could store data with an array, but how would you 
+know what it was, what this or that number means? 
+
+
+This is where the object comes in.  It allows us to order and associate data, rather than store data at an index like with an array.
+Unlike with an array now we have keys to our data, instead of having to know which index this number is at. For example 
+
+const fitbitData = {
+    totalSteps: 308207,
+    totalMiles: 211.7,
+    avgCalorieBurn: 5755,
+    workoutsThisWeek: '5 out of 7',
+    avgGoodSleep: '2:13'
+};
+
+Objects -- 
+__________________________________________________
+
+- Objects are collections of properties 
+-Properties are a key / value pair 
+-Rather than accessing data using an index, we use custom keys. 
+
+Key/Value pairs -- 
+
+username: 'crazycatlady';
+upvotes: 7;
+text: 'great post!'
+
+In Python they refer to what we call Objects in Ruby and JS a dictionary.  Which when you think about it makes sense if you look up a definition
+(key) you can find its defenition (value).  
+
+
+DONT USE NUMBERS AS KEYS
+
+
+
+
+Creating Object Literals --
+
+__________________________________________________
+
+So when you store an object within a variable it is a refrence to that object. We want to use const. 
+
+
+ACCESSING OBJECT PROPERTIES -- 
+__________________________________________________
+
+
+you can use dot notation or bracket notation to access keys to see their values within an object like so: 
+
+objectName.key // 'value'
+
+objectName['key'] // 'value'
+
+Rule of thumb always try and use the dot operator or notation whenever possible, its just easier and it will save you time. 
+
+
+ADDING AND UPDATING PROPERTIES-- 
+__________________________________________________
+
+
+
 
