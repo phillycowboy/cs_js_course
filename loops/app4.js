@@ -64,7 +64,15 @@ for(let i = 0; i < arr.length; i++){
     console.log(`${arr[i]}`);
 }
 
-let newArr = ['how about a nice game of chess?']
-for (let i = 0; i < newArr.length; i++) {
-    console.log(`${newArr[i]}`);
-}
+// let newArr = ['how about a nice game of chess?']
+// for (let i = 0; i < newArr.length; i++) {
+//     console.log(`${newArr[i]}`);
+// }
+
+setTimeout(() => {
+    console.log('how about a nice game of chess?');
+}, 3000);
+setTimeout(() => {
+    console.log('are you still there?');
+}, 10000);
+
