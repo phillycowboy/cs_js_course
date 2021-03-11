@@ -63,6 +63,33 @@ Rule of thumb always try and use the dot operator or notation whenever possible,
 ADDING AND UPDATING PROPERTIES-- 
 __________________________________________________
 
+see app3.js 
+
+
+NESTED ARRAYS AND OBJECTS -- 
+__________________________________________________
+
+
+just like with arrays we can nest objects that have keys that are arrays or keys that are other objects.  
+
+see app3.js for references 
+
+
+
+OBJECTS AND REFERENCE TYPES -- 
+__________________________________________________
+
+see app3.js 
+
+
+
+ARRAY/OBJECT EQUALITY -- 
+__________________________________________________
+
+how == 
+and === behave with arrays and objects 
+
+
 
 
 
