@@ -72,7 +72,29 @@ for(let i = 0; i < arr.length; i++){
 setTimeout(() => {
     console.log('how about a nice game of chess?');
 }, 3000);
+
 setTimeout(() => {
     console.log('are you still there?');
 }, 10000);
+setTimeout(() => {
+    console.log('h');
+}, 11000);
+setTimeout(() => {
+    console.log('e');
+}, 12000);
+setTimeout(() => {
+    console.log('l');
+}, 13000);
+setTimeout(() => {
+    console.log('l');
+}, 14000);
+setTimeout(() => {
+    console.log('o');
+}, 15000);
+setTimeout(() => {
+    console.log('?');
+}, 16000);
+
+
+
 
