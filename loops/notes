@@ -63,5 +63,109 @@ FOR LOOPS AND ARRAYS --
 _________________________________________________________
 
 to loop over an array start at 0 and continue to the last index (length -1)
+as long as i is less than the length of the array 
 
-START HERE TOMORROW WITH COLT 
+
+
+
+NESTED LOOPS -- 
+_________________________________________________________
+
+
+for every iteration of the outer loop the inner loop will run how ever many times you told it too, 
+then go back to the second of the iteration of the outer loop and so on. 
+
+to grab data from a nested array you need a nested loop: 
+
+the outer loop (first iteration), will grab the nested array in its entireity
+
+then the innner loop will grad the data within each individual nested array within the main array
+
+
+
+WHILE LOOPS -- 
+_________________________________________________________
+
+a while loop continues to run as long as its test condition is true. 
+
+
+while(some condition is true){
+    run this code in here. 
+}
+
+
+
+BREAK KEY WORD--
+_________________________________________________________
+a special keyword in JS we can use inside of loops to break out of that current loop 
+
+for(let i = 0; i < 10; i++){
+    console.log(i)
+    if(i === 5){
+        break;
+    }
+}
+
+//1
+//2
+//3
+//4
+//5
+
+so after a condition is met, break will stop the loop. 
+
+
+FOR...OF LOOP -- 
+
+_________________________________________________________
+
+for...of loop is a nice and easy way of iterating over arrays (or other iterable objects)
+
+
+for(variable of iterable){
+    statement 
+}
+
+for this loop you do not have to set a counter and tell it when to stop counting.  by setting your variable OF the array within the conditional 
+for...of will look at both and see that this is now i and the array has been declared it will then run the block of code until its false.
+
+for(let char of 'hello'){
+    console.log(char);
+}
+
+//h
+//e
+//l
+//l
+//o  
+
+
+
+COMPARING FOR AND FOR OF -- 
+
+_________________________________________________________
+
+sometimes it is necessary to use just the FOR loop.  when you want to know the index of something and set it yourself. 
+
+FOR OF you would have to find out what it is bc JS is just doing all that work for you. 
+
+
+
+FOR OF WITH OBJECTS -- 
+_________________________________________________________
+
+you cannot iterate over an object the traditional way with FOR and FOR OF loops-- 
+
+with objects you have to grab the key or the value using the Objec.keys(objectName) or Object.values(objectName)-- 
+
+then do somehting with the variable you set in your for of loop or for loop.  
+
+
+FOR...IN LOOPS ----
+_________________________________________________________
+
+so we are going to use IN instead of FOR with this condition
+
+for(variable IN object){
+    statement 
+}
