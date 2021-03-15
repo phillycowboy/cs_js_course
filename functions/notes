@@ -46,6 +46,25 @@ however the name of the argument that we pass in is called a parameter
 THE RETURN STATEMENT -- 
 
 _____________________________________________________________
+The Return -- is a built in methods return values when we call them. We can store those values : 
+
+const yell = 'I will end you'.toUpperCase();
+yell; //"I WILL END YOU"
+
+const idx = ['a','b','c'].indexOf('c');
+idx; // 2
+
+right now we are not returning the value currently in our functions that we built out we are simply printing them out. 
+
+
+the RETURN statement ends function execution and specifies the value to be returned by that function 
+
+if you have anything after the return statement JS will just move on, it will be done with the function 
+
+
+
+
+
 
 
 
