@@ -222,3 +222,75 @@ function isPangram(string) {
 //     const regex = /([a-z])(?!>*\1)/g;
 //     return (string.match(regex) || []).length === 26;
 // }
+
+// CODE CHALLENGE GET A CARD, returns a card that has a number and suit in the form of an object 
+
+// function getCard(){
+//    const values = [
+//        '1',
+//        '2',
+//        '3',
+//        '4',
+//        '5',
+//        '6',
+//        '7',
+//        '8',
+//        '9',
+//        '10',
+//        'J',
+//        'Q',
+//        'K',
+//        'A'
+//     ];
+//    const idx = Math.floor(Math.random() * values.length);
+//    const value = values[idx];
+
+//    const suits = [
+//        'clubs', 
+//        'hearts', 
+//        'spades', 
+//        'diamonds'
+//     ];
+
+//     const names = Math.floor(Math.random() * suits.length);
+//     const suit = suits[names];
+
+//     return {value: value, suit: suit};
+// }
+
+function pick(arr) {
+    const idx = Math.floor(Math.random() * arr.length);
+    return arr[idx];
+}
+
+function getCard(){
+   const values = [
+       '1',
+       '2',
+       '3',
+       '4',
+       '5',
+       '6',
+       '7',
+       '8',
+       '9',
+       '10',
+       'J',
+       'Q',
+       'K',
+       'A'
+    ];
+   
+//    const value = pick(values);
+
+   const suits = [
+       'clubs', 
+       'hearts', 
+       'spades', 
+       'diamonds'
+    ];
+
+    // const suit = pick(suits);
+
+    return {value: pick(values), suit: pick(suits)};
+}
