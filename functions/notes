@@ -4,4 +4,49 @@ _____________________________________________________________
 
 WRITING REUSABLE CODE WITH FUNCTIONS-- 
 _____________________________________________________________
- START HERE ON MONDAY REVIEW LOOPS IF YOU NEED TOO
+
+GOALS : 
+-write valid functions 
+-write functions with arguments 
+-compare function expressions and function statments 
+-write a bunch of functions! 
+
+Functions are simply just a reusable procedure 
+-functions allow us to write reusable, modular code 
+-we define a 'chunk' of code that we can then execute at a later point 
+-we use them all the time 
+
+theres a two step process for every function that we use 
+-define 
+-run 
+
+
+
+FUNCTION ARGUMENTS -- 
+_____________________________________________________________
+to pass in a value to give the function more information, we can name the parameter what ever we want as long as we are referring to it inside 
+of the function and when we invoke a function giving it a value. 
+
+function greet(name){
+    console.log(`hi ${name}`)
+}
+greet("ben");
+
+
+
+FUNCTIONS WITH MULTIPLE ARGUMENTS -- 
+
+_____________________________________________________________
+
+we have been referring to the input of what we pass in an argument-- which is correct function funcName(argument).
+
+however the name of the argument that we pass in is called a parameter 
+
+
+THE RETURN STATEMENT -- 
+
+_____________________________________________________________
+
+
+
+
