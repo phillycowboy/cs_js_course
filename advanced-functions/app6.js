@@ -163,6 +163,215 @@ function outer() {
  
 // FUNCTION EXPRESSIONS -- 
 
+// function add(x,y) {
+//     return x + y;
+// }
+// an anonymous function 
+const sum = function (x, y) {
+    return x + y;
+}
+// named function 
+const product = function multiply(x,y) {
+    return x * y; 
+}
+
+
+// HIGHER ORDER FUNCTIONS -- 
+
+function add(x,y) {
+    return x + y;
+    
+}
+
+const subtract = function (x,y) {
+    return x - y;
+}
+
+function multiply(x,y) {
+    return x * y;
+}
+
+const divide = function (x, y) {
+    return x / y;
+}
+
+const operations = [add, subtract, multiply, divide];
+
+for(let func of operations){
+    let result = func(100,4);
+    // console.log(result);
+}
+
+// this array is being looped over with each index being represented by func in our for loop.  then we store the result of each func being 
+// called and logging the result which gives us 4 different values 
+// 104 add 
+// 96 subtract  
+// 400 multiply  
+// 25 divide  
+
+
+// by storing these functions within an array we can easily call them now by their index lets say we wanted to invoke the subtract function 
+
+// operations[1](100,4)
+//96;
+
+// so with this array we can loop over it an call each function in order. 
+
+// Now lets store one of our variables in an object 
+
+const thing = {
+    doSomething: multiply
+}
+// since multiply is the value of doSomething inside of the object thing we can call in console thing.doSomething(num,num) and get a return value
+
+// thing.doSomething(100,4)
+// 400;
+
+// by adding a function to an object we are now creating a method. 
+
+
+
+// FUNCTIONS AS ARGUMENTS -- 
+
+// so defining functions that accepts an argument as a function: 
+
+function callThreeTimes(f) {
+    f();
+    f();
+    f();
+}
+
+function laugh() {
+    console.log("HAHAHAHAAHAHAHAHAHAHA");
+}
+// callThreeTimes(laugh);
+// by calling laugh() we are only executing that function once.  BUT if we use callThreeTimes and pass in laugh to that function 
+// callThreeTimes is invoking anything that gets passed in 3 times over.  Since we are passing in laugh as the argument it will console.log
+// 'HAHAHAAHAAH' but it will do it three times since that is the purpose of callThreeTimes 
+// BUT we can define other fucntions to call with callThreeTimes as long as we pass in the function as an argument on invocation 
+
+function rage() {
+    console.log("I hate everythinggggggg!");
+}
+// callThreeTimes(rage);
+
+// this will print out to the console three times 
+
+function repeatNTimes(func, num) {
+    for(let i = 0; i < num; i++){
+        func();
+    }
+}
+
+// repeatNTimes(laugh, 100);
+
+// now what we are doing is defining a function that calls on another function a certain number of times, so when we loop through the arugments 
+// in repeatNTimes(function, number of times it will run) JS know to look at the function we pass in then look at the number and run it until the 
+// for loop in repeatNTimes is false 
+
+function pickOne(f1,f2) {
+    let rand = Math.random();
+    console.log(rand);
+    if(rand < 0.5) {
+        f1();
+    }
+    else {
+        f2();
+    }
+}
+// by having a variable that selects a random number at will given the if else statement if the number is less than a certain value it 
+// will pick one function over the other
+
+
+
+// FUNCTIONS AS RETURN VALUES -- 
+// basically what this will be doing is making functions return a value so that you can use functions to tweak a result 
+
+function multiplyBy(num) {
+    return function (x) {
+        return x * num;
+    }
+}
+
+// multiplyBy(3);
+// function (x) {
+//     return x * 3;
+// }
+// if we call multiplyBy(3) this is what it will be returning to us, we are passing in 3 as num 
+// but sy storing the function that is returning another number and calling it with that arugment we will get that returned back to us: 
+
+const triple = multiplyBy(3);
+triple(6);
+
+
+// we should get 18;
+// naturally when we call multiply by it takes a num which in this case is 3.  When you run mulitplyBy(3) num is now 3 in the above block
+// since it is returning a function it needs another argument of x.  Thats why we are setting triple to a value of the function multiplyBy()
+// now by calling triple(x) it already knows about multiplyBy since it is the value of triple.  SO by asscociation the number you pass into 
+// triple(6) will now be x.  and since we set multiplyBy to have a constant num of 3 in the variable triple the reutrn value will always be 
+// the number times 3 when you pass in an argument of a number to triple();
+const double = multiplyBy(2);
+double(2);
+// here we should get 4 because now we are setting a new value to take the above argument of 2 and multiplying it by 2; 
+
+// think of the function of multiplyBy() as a factory what ever number we pass in it will multiply it by the number of x we pass into the 
+// variable that we are declaring 
+
+// ORDER OF PROCESS 
+// YOU SET UP A FACTORY FUNCTION - multiplyBy to take in a num as an argument. 
+// THEN you have a nested return function that will execute when you call multiplyBy and you have an argument of x that will be passed into the 
+// variable 
+// THEN YOU SET A VARIABLE EQUAL TO the function and pass in the number you want it to be muliplied by 
+// WHEN YOU CALL THAT VARIABLE YOU WILL PASS IN A NUMBER THAT YOU WANT TRIPLED OR DOUBLED 
+//  JS WILL LOOK AT THAT NUMBER IN YOUR VARIABLE AND SEE THAT IT IS CALLING ON multiplyBy SEE THAIT IT TOO HAS A NUMBER AND KNOWS YOU WANT TO 
+// multiply the number passed into the variable and multiply it by the number the function is holding within the value of that said variable 
+
+function makeBetweenFunc(x,y) {
+    return function(num){
+        if(num >= x && num <= y){
+            return true;
+        }
+        return false;
+    }
+}
+const isChild = makeBetweenFunc(0,18);
+
+// what is child is doing is it will take in a number, then compare it to the two numbers that have been set in makeBetweenFunc.
+// inside makeBetweenFunc there is logic to say that if the nunber is greater than x but more than y return true, anyhting else is false 
+// so when we pass in isChild(7) we get true because 7 is greater than 0 but less than 18 so they are in fact a child. 
+
+// ALL IT IS DOING IS TAKING A NUMBER AN COMPARING IT WITH THE RETURN FUNCTION 
+// x is your minimum comparison and y is your greater than comparison if anything is between the 2 it is true other than that it is false 
+
+const isNinetiesBabe = makeBetweenFunc(1990, 2000);
+const isNiceWeather = makeBetweenFunc(65, 75);
+
+
+
+// guessing game will take a number that is passed in with guess and compare it two the two numbers that are stored in the variable. 
+// if it is correct the number will be greater than or equal to x or less than or equal to y 
+
+function makeGuessingGame(x,y) {
+    return function(num){
+        if(num >= x && num <= y){
+            console.log("CORRECT");
+        }
+        else{
+            console.log('Sorry try again');
+        }
+    }
+}
+
+const guess = makeGuessingGame(5,7);
+
+
+// ALL you are doing is making a function factory that can be set to a variable to reutrn the sum or value of a return fucntion.  
+
+
+
+
+
+
 
 
 

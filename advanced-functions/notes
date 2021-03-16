@@ -55,3 +55,41 @@ see examples in app6.js
 FUNCTION EXPRESSIONS -- 
 _____________________________________________
 
+Usually we write functions like so: 
+
+function funcName(){
+    //do something;
+}
+
+There is another way to right these called function expressions: 
+
+const square = function (num){
+    return num * num;
+}
+square(7); // 49;
+
+Here we are storing a function in variable and then referring to that variable to execute the function.  Why does this work? 
+Because functions are objects!!!!!!
+
+
+
+HIGHER ORDER FUNCTIONS -- 
+_____________________________________________
+see app6.js for examples 
+
+
+FUNCTIONS AS ARGUMENTS -- 
+_____________________________________________
+
+HIGHER ORDER FUNCTIONS - functions that operate on/with other functions. They can: 
+-Accept other functions as arguments 
+-return a function 
+
+here we can pass in functions that have already been built out to as arguments. see app6.js for examples 
+
+
+FUNCTIONS AS RETURN VALUES -- 
+_____________________________________________
+
+
+
