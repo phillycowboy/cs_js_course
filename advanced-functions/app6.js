@@ -367,6 +367,128 @@ const guess = makeGuessingGame(5,7);
 
 // ALL you are doing is making a function factory that can be set to a variable to reutrn the sum or value of a return fucntion.  
 
+// Square a number that gets passed into the variable 
+
+function myFunc(num) {
+    return function(x){
+        return x * x; 
+    }
+}
+
+const square = myFunc(2);
+
+
+// CALLBACKS -- 
+
+// function grumpus() {
+//     alert("GAHHHHH GO AWAY!");
+// }
+
+// setTimeout(grumpus, 5000);
+
+// we can use setTimeout like this, it will always take in a function, but we can also have setTimeout take in an anonomyous function: 
+
+// setTimeout(() => {
+//     alert('WELCOME!');
+// }, 5000);
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function (){
+    alert("WHY DID YOU CLICK ME!");
+});
+
+// function grumpus() {
+//     alert("AH GO AWAY!");
+// }
+
+
+// HOISTING -- 
+
+// console.log(animal);
+// var animal = 'Tapir';
+
+// what is happening here for this weird behavior is called HOISTING when JS is interpreting the code it hoists up the variable declaration 
+// so what is happening is this: 
+// var animal;
+// console.log(animal);
+// animal = 'Tapir';
+// so the variable is undefined at first and and then when we try and log it the first time it wont know what it is 
+// but it we log it a second time: 
+
+var animal;
+// console.log(animal);
+animal = 'Tapir';
+// console.log(animal);
+
+// we get: 
+// undefined 
+// Tapir
+
+// so before you do anyhting with js and var you need to declare and initialize your variables; 
+
+// HOISTING WITH LET AND CONST 
+
+// let shrimp = 'Harlequin Shrimp';
+// console.log(shrimp);
+
+// if we do this we expect to see 
+// Harlequin Shrimp in our console, but what if we do what we did earlier? 
+
+let shrimp = 'Harlequin Shrimp';
+console.log(shrimp);
+
+// we get 'Uncaught ReferenceError: Cannot Access 'shrimp' before initialization';
+// so variable declerations made with let are not HOISTED like they were with var declarations it wont know what we want to access until 
+// we declare it and initialize it at the top.  if we do the same thing with const we get the same error. so let and const are not hoisted 
+// NOW this brings us to functions, with functions if we write a function declaration: 
+
+// function howl(){
+//     console.log('AWOOOOOOOO');
+// }
+// howl();
+
+// if we call howl after our declaration it will work. 
+// however if we call howl() before what do you think happens? : 
+
+// howl();
+// function howl() {
+//     console.log('AWOOOOOOOO');
+// }
+
+// it will still print to the console. it still works because functions are hoisted. so you can think of them as being put at the vary top of 
+// your file. 
+
+// we can do this with function expressions as well. 
+
+// var hoot = function () {
+//     console.log('HOOOO HOOOOO');
+// }
+// hoot();
+
+// we know that this will work 
+// BUT IF WE CALL HOOT FIRST: 
+
+hoot();
+var hoot = function () {
+    console.log('HOOOO HOOOOO');
+}
+
+// Uncaught ReferenceError: hoot is not a function, it doesnt work.  why doesnt it work? because we are using a diffrent type of function 
+// we are using a function expression instead of an explicit function.  Function expressions are not hoisted.  It is a variable not a function 
+// so we can console.log it and get undefined it just wont recognize it as a function.  So when we call hoot(); as a function it is trying to call
+// undefined which you cant do. 
+
+
+
+
+
+
+
+
+
+
+
 
 
 
