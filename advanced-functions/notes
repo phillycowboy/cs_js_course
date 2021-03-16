@@ -2,5 +2,56 @@ AN ADVANCED LOOK AT FUNCTIONS --
 _____________________________________________
 Function Scope -- 
 _____________________________________________
-start here tomorrow feel better dont try and push yourself when youre tired. 
+GOALS : 
+-understand scope 
+-write higher order functions 
+-pass functions as callbacks 
+
+SCOPE - variable visibility 
+- the location where a variable is defined dictates where we have access to that variable 
+
+the portion of your code where other values have access to it. 
+
+Function Scope
+
+function helpMe(){
+    let msg = 'Im on fire';
+    msg; //'Im on fire';
+}
+
+msg// NOT DEFINED 
+
+msg is scoped to the helpMe function
+
+
+
+BLOCK SCOPE -- 
+_____________________________________________
+
+let radius = 8;
+
+if(radius > 0){
+    const PI = 3.14;
+    let circ = 2 * PI * radius;
+}
+
+console.log(radius) // 8;
+console.log(PI);  // NOT DEFINED 
+console.log(circ);  //MOT DEFINED
+
+PI and circ are scoped to the BLOCK 
+
+let and const are block scoped, you only have access to them within the scope of which ever block you defined them in--
+if they are defined within a variable they are only available within the scope of that singular function, if they sit within 
+a for loop they are only availble to you within that loop and cant be accessed outside of the loop. 
+
+
+LEXICAL SCOPE -- 
+_____________________________________________
+
+see examples in app6.js 
+
+
+FUNCTION EXPRESSIONS -- 
+_____________________________________________
 
