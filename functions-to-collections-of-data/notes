@@ -4,4 +4,37 @@ ___________________________________________
 Intro to Arrays and Callback Methods -- 
 ___________________________________________
 
-START HERE TOMORROW 
+Array Callback Methods -- arrays come with many built in methods that accept Callback FUNCTIONS
+- now that we've covered callbacks we can learn these methods 
+-SUPER USEFUL 
+
+GOALS : 
+-use the new arrow function syntax 
+-understand and use these methods : 
+    -forEach 
+    -map
+    -filter 
+    -find 
+    -reduce 
+    -some 
+    -every 
+
+
+FOREACH -- 
+___________________________________________
+Accepts a callback function.  Calls the function once per element in the array. 
+
+const nums = [9,8,7,6,5,4,3,2,1]
+
+nums.forEach(function (n) {
+    console.log(n * n);
+});
+
+nums.forEach(function (el){
+    if (el % 2 === 0){
+        console.log(el);
+    }
+});
+
+
+START HERE TOMORROW -- 
