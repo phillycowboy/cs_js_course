@@ -144,5 +144,10 @@ can just pass something a function like a clickevent or a setimeout if you dont 
 
 HOISTING -- 
 _____________________________________________
+RULE OF THUMB:::::: 
+
+ALWAYS DECLARE AND INITIALIXE YOUR VARIABLES AT THE TOP OF THE PAGE/FILE!!!!!!!! 
+
+see examples in app6.js 
 
 

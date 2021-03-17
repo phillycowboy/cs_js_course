@@ -30,11 +30,100 @@ nums.forEach(function (n) {
     console.log(n * n);
 });
 
+Just like we would call nums.indexOf or nums.reverse.  the goal of forEach is that it takes whatever function you give it and calls it on each 
+element 
+
 nums.forEach(function (el){
     if (el % 2 === 0){
         console.log(el);
     }
 });
 
+forEach can accept an anonymous function or a predetermined function, it can also accept more than one argument in the callback function.
 
-START HERE TOMORROW -- 
+Basically forEach is more short hand of : 
+
+forOf 
+and 
+for loop 
+
+It will do something to each element of an array that it is called on. 
+
+
+
+MAP -- 
+___________________________________________
+Creates a new array with the results of calling a callback on every element in the array. 
+
+Does not mutate the original array, and you will always need a return statement in your block for it to work as well as saving it to a variable 
+
+
+
+ARROW FUNCTIONS INTRO -- 
+___________________________________________
+
+syntactically compact alternative to a regular function expression 
+
+Function Expression: 
+
+const square = function (num){
+    return num * num;
+}
+
+Arrow Function: 
+
+const square = (x) => {
+    return x * x;
+}
+
+const sum = (x,y) => {
+    reutrn x + y;
+}
+
+Here we dont have to write our function keyword we just write the parameter instead 
+
+
+FIND -- 
+___________________________________________
+
+returns the value of the first element in the arrayt that satifies the provided testing function 
+returns true or false depending on what you are looking for. but it will only return one element 
+
+REMMBER FIND WILL ONLY GIVE US THE FIRST MATCH 
+
+
+
+FILTER -- 
+___________________________________________
+
+Creates a new array with all the elements that pass the test implemented by the provided function 
+does not mutate the original array we are making a copy 
+
+Allows us to filter out some subsets of an array 
+
+const nums = [9,8,7,6,5,4,3,2,1];
+const odds = nums.filter(n => {
+    return n % 2 === 1; 
+})
+our callback returns true or false if it returns true, n is added to the filtered array 
+
+[9,7,5,3,1]
+
+const smallNums = nums.filter(n => n < 5);
+[4,3,2,1]
+
+
+
+SOME AND EVERY -- 
+___________________________________________
+
+
+
+
+
+
+
+
+
+
+
