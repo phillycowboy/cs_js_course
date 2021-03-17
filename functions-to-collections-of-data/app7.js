@@ -283,3 +283,64 @@ const searchBook = books.filter(book => (
 
 // SOME AND EVERY -- 
 
+// Every tests whether all elements in the array pass the provided function. it returns a boolean value 
+
+const names = ['dog', 'dig', 'log', 'bag', 'wag'];
+
+const name3 = names.every(name => {
+    return name.length === 3;
+})
+
+const endsWithG = names.every( name => {
+    const last = name.length-1; 
+    return name[last] === 'g';
+})
+
+//  SOME 
+
+const startsWithD = names.some(name => name[0] === 'd');
+
+// SOME NEEDS JUST ONE ELEMENT IN THE ARRAY TO TURN TRUE, EVERY NEEDS ALL OF THE ELEMENTS TO RETURN TRUE 
+
+const everyBookRating = books.every(book => {
+   return book.rating > 4.5
+});
+// false 
+
+const any2authors = books.some(book => book.authors.length === 2);
+
+// true 
+
+
+// SORT -- 
+
+const prices = [400.50,3000,99.99,35.99,12.00,9500];
+
+// prices.sort();
+// the defualt value of this is to convert all of these into strings, and will go by cahracter first rather than value 
+
+// SORT PT 2 -- 
+// arr.sort(compareFunc(a,b))
+// if compareFunc returns less than 0 sort a before b 
+// if compareFunc returns 0 leave a and b unchanged with respect to each other 
+// if compareFunc returns greater than 0 sort b before a 
+
+// IT WILL MUTATE YOUR ARRAY SO MAKE SURE YOU SAVE TWO COPIES-- or you will mutate in place whcih will change the original order i guess people
+// dont care about it that much 
+// const ascSort = prices.slice().sort((a,b) => a - b);
+
+const badSort = prices.slice().sort();
+
+const ascSort = prices.slice().sort((a,b) => a - b);  //assorting in asceding order from smallest - largest 
+const descSort = prices.slice().sort((a,b) => b - a);  //assorting in descedning order from largest - smallest 
+
+
+const ratingsSort = books.sort((a,b) => a.rating - b.rating)
+
+
+// REDUCE -- 
+
+// LAST ARRAY METHOD START HERE TOMORROW TAKE YOUR TIME AND DONT RUSH IT 
+
+
+

@@ -117,7 +117,29 @@ const smallNums = nums.filter(n => n < 5);
 SOME AND EVERY -- 
 ___________________________________________
 
+Every -- tests whether all elements in the array pass the provided function. it returns a boolean value 
 
+const words = ['dog','dig','log','bag','wag'];
+words.every(word => {
+    return word.length === 3;
+})
+//true 
+
+SOME is similar to EVERY but returns true if ANY of the array elements pass the test function 
+
+
+
+SORT --- 
+___________________________________________
+
+look at examples in app7.js 
+
+
+
+REDUCE -- 
+___________________________________________
+
+START HERE TOMORROW DONT RUSH AND TAKE YOUR TIME 
 
 
 
