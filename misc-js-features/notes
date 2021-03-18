@@ -83,4 +83,51 @@ ________________________________
 
 It looks like spread but its not 
 
+Instead of taking one array and breaking it up into multiple elements like spread 
+Rest is taking multiple elements and making it one object/array 
+
+see examples in app8.js     
+
+
+
+DESTRUCTURING ARRAYS -- 
+________________________________
+
+Destructuring - a short and clean syntax to: 
+-unpack values in an array 
+-properties from objects 
+into distinct variables  
+
+Basically you set new variables in an array to the position of what you want to equal to an already existing array 
+
+const numbers = [1,2,3,4]
+const [first, second, third, fourth] = numbers 
+
+then you can call first and get the value of one because the number 1 is set to the first index of 0 as well as is the new variable of 'first'
+
+
+
+DESTRUCTURING OBJECTS -- 
+________________________________
+
+to unpack an array we do so based on position, 
+to unpack an object we do so based on the property 
+
+see app8.js for examples 
+
+
+NESTED DESTRUCTURING -- 
+________________________________
+
+its the same syntax, but we now can mix the two of destructuring arrays and objects together 
+
+see app8.js for examples 
+
+
+
+PARAM DESTRUCTURING -- 
+________________________________
+
+
+
 
