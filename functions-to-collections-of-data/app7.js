@@ -343,4 +343,99 @@ const ratingsSort = books.sort((a,b) => a.rating - b.rating)
 // LAST ARRAY METHOD START HERE TOMORROW TAKE YOUR TIME AND DONT RUSH IT 
 
 
+// [3,5,7,9,11].reduce((accumulator, currentValue) => {
+//     return accumulator + currentValue;
+// });
+
+// the accumulator variable is going to start as the first element in the array 3  
+// and currentValue starts as the next element 5
+// and then the return value is 8 
+// then the return value is used as the accumulator in the next iteration so accumulator will now be 8 
+// then currentVlaue will be 7 
+// then the return value will be 15 
+// this will repeat as long as the array is being iterated over 
+
+// Callback       accumulator       currentValue        return value 
+// first call         3                  5                  8   
+// sec call           8                  7                  15    
+// thrid call         15                 9                  24   
+// fourth call        24                11                  35     
+
+const reduceArr = [3,4,5,6,7];
+
+const product = reduceArr.reduce((accumulator, currentValue)=>{
+    return accumulator * currentValue;
+})
+
+// Callback       accumulator       currentValue        return value 
+// first call         3                  4                  12   
+// sec call           12                 5                  60   
+// thrid call         60                 6                  360   
+// fourth call        360                7                  2520  -- end value  
+
+
+
+
+// REDUCE PT 2  -- 
+
+const grades = [87,64,96,92,88,99,73,70,64];
+
+// const maxGrade = grades.reduce((accumulator, currentValue) => {
+//     if(currentValue > accumulator) return currentValue;
+//     return accumulator;
+// })
+const maxGrade = grades.reduce((accumulator, currentValue) => {
+    return Math.max(accumulator, currentValue);
+})
+const minGrade = grades.reduce((min, currentValue) => {
+    return Math.min(min, currentValue);
+})
+
+// accumulator                currentValue            return 
+// 87                             64                     87
+// 87                             96                    96   
+// 96                             92                    96     
+// 96                             88                    96  
+// 96                             99                    99
+// 99                             73                    99
+// 99                             70                    99 
+// 99                             64                    99
+
+// the top value would be 99, reduce is going to look at every element in the array an compare it to the highest value of the next element 
+// in the array. 
+
+// with reduce you can also add in an initial value at the end of the code block: 
+
+const sum = [10,20,30,40,50].reduce((sum, currVal) => {
+    return sum + currVal;
+}, 100)
+
+// EVEN MORE REDUCE!!!! -- 
+
+const votes = ['y','y','n','y','n','y','n','y','n','n','n','n','y','y'];
+
+// const results = votes.reduce((tally, val) => {
+//     if(tally[val]){
+//         tally[val]++;
+//     } else {
+//         tally[val] = 1;
+//     }
+//     return tally;
+// }, {})
+const results = votes.reduce((tally, val) => {
+    tally[val] = (tally[val] || 0) + 1
+    return tally;
+}, {})
+
+const groupedByRatings = books.reduce((groupedBooks, book) => {
+   const key = Math.floor(book.rating);
+   if(!groupedBooks[key]) groupedBooks[key] = [];
+   groupedBooks[key].push(book);
+   return groupedBooks;
+}, {});
+
+// So to sum up with REDUCE all you are doing is taking multiple values and reducing it down to one value.  You might get a singular number 
+// like before or you might return an object like we just did. 
+
+
 

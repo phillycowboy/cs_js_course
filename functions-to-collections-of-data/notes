@@ -139,7 +139,13 @@ look at examples in app7.js
 REDUCE -- 
 ___________________________________________
 
-START HERE TOMORROW DONT RUSH AND TAKE YOUR TIME 
+An array method that you pass a callback method to it 
+
+- it takes an array of values executes a reducer function on each element of the array resulting in a single value 
+see app7.js for examples and tables 
+
+
+
 
 
 
