@@ -1,0 +1,86 @@
+MISC JS FEATURES -- 
+________________________________
+
+GOALS: 
+
+-work with rest and spread 
+-add default function parameters 
+-understand destructing 
+
+
+DEFAULT PARAMS -- 
+________________________________
+
+the old way - 
+function multiply(a,b){
+    b = typeOf b !== 'undefined' ? b : 1;
+    return a * b;
+}
+multiply(7);  //7
+multiply(7,3);  //21 
+
+you would have to check and see whether a parameter had a value of undefined or not with an if else statement 
+
+Now all you have to do is this, but the defualts go on the end and order must matter here: 
+
+function multiply(x, y = 1) {
+    return x * y;
+}
+
+const greet = (person, greeting = 'hi') => {
+    return `${greeting}, ${person}!`;
+}
+
+const blah = (x, y=[1,2,3]) => {
+    console.log(x,y);
+}
+
+
+THE SPREAD OPERATOR FOR FUNCTION CALLS -- 
+________________________________
+
+Spread - 
+Spread syntax allows an iterable such as an array to be expanded in places where zero or more arguments (for function calls) or elements 
+(for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals)
+are expected 
+
+// The main thing with spread is that if you pass in an argument of an array with different values, or numbers, if you pass in that variable it 
+// will treat the argument as an indiviual value even though its a list of values.  with SPREAD... it will look at everything in the array and 
+// pass in each seperate value. 
+
+SPREAD IN ARRAY LITERALS -- 
+________________________________
+
+/ SPREAD IN ARRAY LITERALS -- 
+
+// Spread in array literals - 
+
+// Creates a new array using an existing array. Spreads the elements from one array into a new array
+
+// const nums1 = [1,2,3];
+// const nums2 = [4,5,6];
+
+// [...nums1...nums2];
+// 1,2,3,4,5,6
+
+// [a,b,...nums2];
+// a,b,4,5,6
+
+// [...nums1...nums2,7,8,9]
+// [1,2,3,4,5,6,7,8,9]
+
+
+
+SPREAD IN OBJECT LITERALS -- 
+________________________________
+See examples in app8.js 
+
+
+
+REST -- 
+________________________________
+
+
+It looks like spread but its not 
+
+
