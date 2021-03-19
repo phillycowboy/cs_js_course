@@ -1,0 +1,95 @@
+OBJECT METHODS AND THE 'THIS' KEYWORD -- 
+____________________________________________________
+
+SHORTHAND OBJECT PROPERTIES -- 
+____________________________________________________
+
+Objects are great for storing key/value pairs, strings, arrays, etc.  But Objects are a central part of how JS functions behind the scenes 
+and how we write our code 
+
+GOALS: 
+
+-add methods to objects 
+-use new object shorthand syntax 
+-use computed properties 
+-understand prototypes 
+-explain how the fuck this works 
+
+Shorthand Properties -- 
+____________________________________________________
+
+a nice and easy way to create an object literal where you have variables and you want to create a property where the key name is the name 
+of your variable and the value is the value in the variable 
+
+const getStats = (arr) => {
+    const max = Math.max(...arr);
+    const min = Math.min(...arr);
+    const sum = arr.reduce((sum, r) => sum + r);
+    const avg = sum / arr.length;
+    return {
+        max: max,
+        min: min,
+        sum: sum,
+        avg: avg
+    }
+}
+
+const reviews = [4.5,5.0,3.44,2.8,3.5,4.0,3.5];
+
+const stats = getStats(reviews);
+
+this was the old way we had to write it, the short hand is just to pass in the variable that you declare inside the function into the returned object 
+to create them: 
+
+
+const getStats = (arr) => {
+    const max = Math.max(...arr);
+    const min = Math.min(...arr);
+    const sum = arr.reduce((sum, r) => sum + r);
+    const avg = sum / arr.length;
+    return {
+        max,
+        min,
+        sum,
+        avg
+    }
+}
+
+
+COMPUTED PROPERTIES -- 
+____________________________________________________
+
+computed properties are just an improvement for the object literal syntax where we can add a property with a dynamic key 
+
+
+const role = 'host';
+const person = 'Jools Holland';
+
+const team = {
+    role: person 
+}
+
+This way is not checking wheter the keys are variables or not and you can set it to anything we know that role is host and person is 'Jools Holland'
+The old way to set this up would have been 
+
+const team = {}
+team[role] = person; 
+
+team 
+//{host: 'Jools Holland'}
+
+with the computed properties we can now use variables as a key name in an object literal property 
+
+const user = 'Jools';
+
+const userRoles = {
+    [user]: 'Admin';
+}
+userRoles // {Jools: 'Admin'}
+
+the variables are evaluated first and it will be set to admin 
+
+
+
+
+
