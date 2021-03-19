@@ -169,6 +169,45 @@ const auth = {
 
 // INTRO TO THE KEYWORD "THIS"-- 
 
+function sayHi() {
+    console.log("HI");
+    console.log(this);
+}
+// when we run this in console we get the string HI but we also get an object called the WINDOW when we console.log(this). 
+// What is the window? the window is the global scope in the browser 
+
+// so when we defined the function sayHi() it was added as a property to the window object 
+// so this inside a normal function refers to the window 
+
+// when we call alert('LOL') we get a pop up in the browser 
+// but alert is also a property on the window so we can call it like this: 
+
+
+// window.alert('LOL');
+
+// when we define a variable with var we are adding a property to the window object 
+
+var color = 'teal';
+console.log(window.color);
+// teal
+// it is now added to the global scope 
+
+// but this does not apply to let and const 
+
+let num = 400; 
+window.num
+//undefined 
+
+// let and const are not added to the global scope 
+
+const greet = () =>{
+    console.log(this);
+}
+
+// remember that 'this' is a refreence to an object, that object represents the current executions scope 
+
+
+
 
 
 
