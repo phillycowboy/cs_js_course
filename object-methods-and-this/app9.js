@@ -85,7 +85,7 @@ const team = {
 
 // the new way to write it: 
 const addProp = (obj, k, v) => {
-
+    return {...obj, [k]:v}
 }
 const res = addProp(team, 'happy', ':)');
 
@@ -94,6 +94,9 @@ const res = addProp(team, 'happy', ':)');
 // Director: "James Cameron"
 // happy: ":)"
 // host: "Jools Holland"
+
+
+// ADDING METHODS TO OBJECTS -- 
 
 
 

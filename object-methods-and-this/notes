@@ -89,6 +89,17 @@ userRoles // {Jools: 'Admin'}
 
 the variables are evaluated first and it will be set to admin 
 
+Computed Properties are blaytant syntax of creating keys.  you can define a key value pair by passing in a variable and setting as the key 
+
+see app9.js for examples 
+
+
+ADDING METHODS TO OBJECTS -- 
+____________________________________________________    
+
+
+
+
 
 
 
