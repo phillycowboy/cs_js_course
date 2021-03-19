@@ -207,6 +207,143 @@ const greet = () =>{
 // remember that 'this' is a refreence to an object, that object represents the current executions scope 
 
 
+// USING "THIS" IN METHODS 
+// so as opposed to referring to 'this' on a function we get returned the window object. 
+
+// const person3 = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName(){
+//         console.log(this);
+//     }
+// }
+
+// but when we refer to 'this' in this context we get returned the object itself of person3 
+// by referencing 'this' inside of a method of an object it now gives us access to all of the properties of said object 
+
+// const person3 = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName() {
+//         console.log(this.first);
+//     }
+// }
+// now when we call person3.fullName()
+// we get 
+// Cherilyn 
+// this inside of an object makes it aware of all the other properties within the same object 
+
+// lets build out our function so that it does what it says, to give the full name 
+
+// const person3 = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName() {
+//         console.log(`${this.first} ${this.last} AKA ${this.nickName}`);
+//     }
+// }
+
+// by using a template literal we can now print out and refer to the other object properties within the person3
+
+// we could also destructure the this into a variabele so all we have to do now is call the properties in the template literal 
+
+// const person3 = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName() {
+//         const {first, last, nickName} = this;
+//         console.log(`${first} ${last} AKA ${nickName}`);
+//     }
+// }
+// and it still works the same way!!!! 
+
+// we could also add another method within the person3 object and call on another method 
+
+// const person3 = {
+//     first: 'Cherilyn',
+//     last: 'Sarkisian',
+//     nickName: 'Cher',
+//     fullName() {
+//         const { first, last, nickName } = this;
+//         return `${first} ${last} AKA ${nickName}`;
+//     },
+//     printBio() {
+//         const fullName = this.fullName();
+//         console.log(`${fullName} is a person!`);
+//     }
+// }
+
+// the keyword 'this' in this context is reffering to the object that they are living in.  here they are referring to the person3 object 
+// above it is reffering to the global scope so it refers to the window 
+
+
+// THIS INVOCATION CONTEXT 
+
+// const printBio = person3.printBio;
+
+// think of it as if there is something to the left and you are using a dot to call something THIS will refer to that object 
+// if we call this within the method of printBio save it to a variable of the same name on the global scale THIS is now  a referenec to the WINDOW 
+// BUT 
+// if we call this within the method and then call the method on the object THIS is a refrence to that specific object itself 
+
+// IF THERE IS NOTHING TO THE LEFT "THIS" WILL BE REFERRING TO THE GLOBAL WINDOW AND NOT THE INDIVIDUAL OBJECT 
+
+// a key difference between function expressions and arrow functions ARROW FUNCTIONS DO NOT GET THEIR OWN KEYWORD THIS 
+
+const person3 = {
+    first: 'Cherilyn',
+    last: 'Sarkisian',
+    nickName: 'Cher',
+    fullName() {
+        const { first, last, nickName } = this;
+        return `${first} ${last} AKA ${nickName}`;
+    },
+    printBio() {
+        const fullName = this.fullName();
+        console.log(`${fullName} is a person!`);
+    },
+    laugh: () => {
+        console.log(this);
+        console.log(`${this.nickName} says HAHAHAAAHA`);
+    }
+}
+
+// with an arrow function the value of this is now set to the window it doesnt know what nickName is because those properties are only available
+// locally to the object 
+
+// Generally this is why we dont write arrow functions for methods in objects because we will need access to the parent object itself 
+// the above we lose all of the properties with this object by using the arrow function syntax 
+
+// THE VALUE OF THIS DEPENDS ON THE INVOCATION CONTEXT THE FUNCTION IT IS USED IN 
+
+
+// ANNOYOMATIC DEMO -- 
+
+// START HERE LATER 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

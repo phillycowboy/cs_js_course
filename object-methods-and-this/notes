@@ -128,6 +128,20 @@ what 'this' is, think of it as a keyword, as a reference to the current executio
 so depending on the scope and the rules of how 'this' works that object changes it could be a reference to the global scope or to the scope of a 
 function. 
 
+if you use it in the global scope it 'this' is referring to the WINDOW object on the browser 
+
+if you use it in the scope of an object, 'this' is referring to that specific object 
+
+the value of THIS depends on the invocation context of the function it is used in 
+
+
+
+ANNOYOMATIC DEMO -- 
+
+START HERE TOMORROW 
+
+
+
 
 
 
