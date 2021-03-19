@@ -98,6 +98,82 @@ const res = addProp(team, 'happy', ':)');
 
 // ADDING METHODS TO OBJECTS -- 
 
+// const add = function(x,y){
+//     return x + y;
+// }
+
+// this by itself is a function.  but when we put into an object and call it on something it is now a method.
+
+// 'hello'.toUpperCase() is a built in method
+// now we are going to see how to add our own methods 
+
+// const math = {
+//     add 
+// }
+
+// we could add 'add' function into the object by using the shorthand, but to call the method we need to use the dot notation 
+
+// math.add(x,y)
+
+// its pretty uncommon to define your method and then pass it in mainly you would do something like this: 
+
+// const math = {
+//     add: function(x,y) {
+//         return x + y;
+//     },
+//     multiply: function(x,y) {
+//         return x * y;
+//     }
+// }
+
+// we can call it with dot notation but remember we have to invoke it with the parens math.add() math.multiply()
+
+// a function by itself is just a function but when we add a function to a property in an object we call it a method 
+
+
+
+// METHOD SHORTHAND SYNTAX ---
+
+// we could add arrow functions 
+// const math = {
+//     add: (x, y) => {
+//         return x + y;
+//     },
+//     multiply: (x, y) => {
+//         return x * y;
+//     }
+// }
+
+// or we could use the shorthand by just naming the key and then writing the function 
+
+const math = {
+    blah: 'HI',
+    add(x,y){
+        return x + y;
+    },
+    multiply(x,y){
+        return x * y;
+    }
+}
+
+const auth = {
+    username: 'TommyBoy',
+    login(){
+        console.log('Logged you in');
+    },
+    logout(){
+        console.log('goodbye!');
+    }
+};
+
+
+// INTRO TO THE KEYWORD "THIS"-- 
+
+
+
+
+
+
 
 
 
