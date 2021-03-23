@@ -10,3 +10,91 @@ IMPORTANT NOTE -- HTML AND CSS --
 _______________________________
 
 
+SEE APP.js for examples 
+
+
+TASTE OF THE DOM -- 
+_______________________________
+
+What is it? 
+- The DOM is a Javascript representation of a webpage 
+-It's your js 'window' into the contents of a webpage 
+-Its just a bunch of objects that you can interact with via JS 
+
+Stands for Document Object Model 
+
+When the page loads up it is going to turn everything on that page into objects, JS objects
+
+It is the JS rpresentation of content on the page and it consists of a bunch of JS objects 
+
+HTML AND CSS go in and spits out JS Objects representing the HTML and CSS 
+
+HTML AND CSS GOES IN ... 
+
+<body>
+    <h1>Hello!</h1>
+    <ul>
+        <li>Water Plants</li>
+        <li>Get Some Sleep</li>
+    </ul>
+</body>
+
+
+JS OBJECTS COME OUT .... 
+
+DOCUMENT 
+    -BODY 
+        -h1
+        -ul--
+            -li
+            -li
+
+
+
+When you go to a website and grab a button or an input by its id you'll notice that they are just JS Objects the way that we made them in consle
+
+to see the object type in console.dir(variable name or dom element)
+
+from there you see that almost everything has a key 
+
+TO SUM UP the dom is just a bunch of JS objects.  Knowing that, we can find its values within the object itself and maipulate the dom how 
+we want 
+
+
+
+ANOTHER FUN DOM EXAMPLE -- 
+_______________________________
+
+Examples with google.com homepage 
+
+we are using the Snippets section on the dev tools -- sources < snippets < new snippet 
+
+i made app2.js whcih is hooked up to index2.html 
+
+maybe some cool css shit for your project 
+
+
+
+THE DOCUMENT OBJECT MODEL -- 
+_______________________________
+THE DOM :
+-Document 
+-Object 
+-Model 
+
+Lets start with the DOCUMENT -- 
+the documnet object is our entry point into the world of the DOM. It contains representaions of all the content on a page plus tons of useful 
+methods and properties 
+
+Document is an object that you have in every single browser that you open 
+
+console.dir(document) -- in console will show you the current document object 
+document.querySelector 
+
+whenever we want access to the document we type it then dot notation a method or function 
+
+
+getElementById -- 
+_______________________________
+
+START HERE TOMORROW!!!!! 
