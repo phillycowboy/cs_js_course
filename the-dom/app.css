@@ -1,0 +1,32 @@
+h1 {
+	color: purple;
+	font-size: 60px;
+	text-shadow: black;
+	text-align: center;
+}
+
+#man-photo {
+	max-width: 250px;
+}
+
+.special {
+	color: teal;
+	font-size: 30px;
+	border: 1px solid teal;
+}
+input[type="password"] {
+	height: 50px;
+	width: 100px;
+}
+
+img:hover {
+	transform: skew(-10deg);
+	/* transform-style: preserve-3d; */
+	color: #ff7a59;
+	border: #ff7a59 solid 1px;
+	background: #fff;
+}
+
+button:hover {
+	color: teal;
+}
