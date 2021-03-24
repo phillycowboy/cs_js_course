@@ -251,6 +251,257 @@ innerHTML -- will take the string that you pass in and parse it and know that yo
 VALUE, SRC, HREF AND MORE -- 
 __________________________________________________
 
+these are individual properties that we can directly access on elements -- 
+
+if we want to access the information passed into a form we have an attribute that we can call- value 
+
+VALUE - 
+
+lets grab the elements: 
+document.querySelectorAll('input')
+//NodeList(5) [input, input, input, input, input]
+
+we'll save it to a variable: 
+const inputs = document.querySelectorAll('input')
+
+
+Currently with an empty from the values are "" or empty:
+inputs[0].value
+//"" 
+
+but what if we just filled out the first input with our name and called value on it:
+
+inputs[0].value
+//"Bennnnnnnnn"
+
+This is the way we can obtain information from the form itself, by finding the appropraite input iundex and calling value on it it will return a 
+string with what the user typed in. 
+
+what about the checkbox beofre and after you check it? 
+
+inputs[2].value
+//"on"
+
+This shows up for both.  If we look at the 2nd input object we will see that instead of value for checkboxes they have a property called checked 
+that returns a boolean true or false: 
+
+when checked: 
+inputs[2].checked
+//true
+
+when empty: 
+inputs[2].checked
+//false
+
+you can set values or add to them by using the '=' or to add '+=' and in the form it will up.  
+
+with JS you can also clear any preexisting values by setting it to an empty string: 
+
+grab the value and set it: 
+
+inputs[0].value = ''
+
+You can also change the placeholder text by grabbing the same input element and setting it to .placeholder: 
+
+inputs[1].placeholder 
+//"Password"
+
+If we want to change it: 
+
+inputs[1].placeholder = "Please enter a password!"
+//"Please enter a password!"
+
+It will now reflect your changes on the DOM until you refresh. 
+
+
+HREF -- 
+
+Now lets add an anchor tag to the HTML find it in the DOM save it to a variable and call .href on it: 
+
+a.href
+//"http://www.cats.com/cute"
+
+we could also change the link if we wanted to by doing the following 
+
+a.href = 'http://www.google.com'
+//"http://www.google.com"
+
+
+
+SRC -- 
+
+We also have a way to change the image on the DOM through its attribute of SRC in the HTML: 
+
+first select the image: 
+
+document.querySelector('img')
+
+save it to a variable: 
+
+const img = document.querySelector('img')
+
+
+call .src on img: 
+img.src
+//"https://images.pexels.com/photos/6016037/pexels-photo-6016037.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+
+and if we want to change it: 
+
+img.src = 'https://images.pexels.com/photos/3135649/pexels-photo-3135649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+
+
+img.src = 'https://images.pexels.com/photos/3135649/pexels-photo-3135649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260'
+//"https://images.pexels.com/photos/3135649/pexels-photo-3135649.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
+
+
+The DOM should now have updated the changes you have made in the console. 
+
+
+
+
+GETTING AND SETTING ATTRIBUTES -- 
+__________________________________________________
+
+now we are dealing with two methods: 
+getAttribute()
+setAttribute()
+
+Exactly how they sound they allow us to get or set attributes on an element 
+
+Lets look at our range input find it and set it to a variable: 
+
+const range = document.querySelector('input[type=range]')
+
+so with this input we have different attributes: 
+<input type="range" min="100" max="500" step="50">
+
+so if we wanted to know or get the max attribute for range we could do it this way: 
+
+range.getAttribute('max')
+//"500"
+range.getAttribute('min')
+//"100"
+range.getAttribute('type')
+//"range"
+range.getAttribute('step')
+//"50"
+
+We can also change or set the arrtibutes as well, this method will take two arugments- the attribute name and the value you want to change it too:
+
+range.setAttribute('min', '-500')
+
+range.getAttribute('min')
+//"-500"
+
+we could even change the type of input: 
+
+range.setAttribute('type', 'radio');
+
+
+
+FINDING PARENT/CHILDREN/SIBLINGS -- 
+__________________________________________________
+
+parentElement, children, nextSibling, previousSibling
+
+they allow you to access other elements based off the current element that you are working with 
+
+SO lets grab the first li on the page and save it to a variable: 
+
+const firstLi = document.querySelector('li')
+
+if we inspect the element: 
+
+console.dir(firstLi)
+
+We see that it has a property called parentElement and it is referencing a ul: 
+
+parentElement: ul
+
+So this is a connection that is pointing upwards, its how we can find the parent of the given element we are working with. 
+And we can access it by typing: 
+
+firstLi.parentElement
+//<ul>​…​</ul>
+
+​We could also call the parentElement on the parentElement and what do you think we will see: 
+
+firstLi.parentElement.parentElement
+<body>​…​</body>​
+
+THE BODY!!!!! 
+
+And so on and so forth until it becomes null 
+
+We also have the children, since li's have no children lets find something that does and save it to a variable: 
+
+const ul = document.querySelector('ul')
+
+if we want to access the ul's children: 
+
+ul.children
+HTMLCollection(3) [li.special, li, li.special]
+
+This is another array like object, and contains the children elements of this ul, and they are in order of apperance in the DOM.
+
+Lets say we wanted to find the next sibling of the first li: 
+
+we find our first li again and save it to a variable: 
+
+const firstLi = document.querySelector('li')
+
+and then we call: 
+firstLi.nextElementSibling
+<li>​…​</li>​
+
+Which gives us our next li of 'Second Thing' because they share a parent- the ul 
+
+And this will give us our third li: 
+
+firstLi.nextElementSibling.nextElementSibling
+<li class=​"special">​::marker​"Third Thing"</li>​
+
+IF we wanted to work backwards from the thrid li we would save it to a variable and call previousSibling: 
+
+const thridLi = firstLi.nextElementSibling.nextElementSibling
+
+and then call the mehtod on it: 
+
+thridLi.previousElementSibling
+<li>​::marker​"Second Thing"</li>​
+
+We end up obtaining the second li! 
+
+These properties are nice to use when you need to find the parent of a child node or the child node of a parent. 
+
+
+
+
+CHANGING MULTIPLE ELEMENTS -- 
+__________________________________________________
+
+START HERE TOMORROW!!! 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
