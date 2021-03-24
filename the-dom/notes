@@ -94,7 +94,269 @@ document.querySelector
 whenever we want access to the document we type it then dot notation a method or function 
 
 
+
+SELECTING METHODS FOR THE DOM-- 
+_______________________________
+typically we select an element and then manipulate them on the dom 
+
 getElementById -- 
 _______________________________
+ 
+ we call this selecting method by typing : 
 
-START HERE TOMORROW!!!!! 
+ document.getElementById('id of element')
+
+ It will select an element in the document with the id of whatever you pass in.
+
+ If and only if there is an element with a matching id will we get back an object of that element 
+
+ if we use this method to access the element on the dom we get returned HTML but really its an object if you type console.dir(variable or element)
+
+so if there is a matching id we get an object returned to us if not we get null 
+
+
+getElementsByTagName -- 
+_______________________________
+
+rather than selecting by id we select by type of element 
+
+potentially you could get more than one element with this method, so it could be a list of h1's instead of just one 
+
+we use it by typing: 
+
+document.getElementsByTagName('tagname')
+
+It will return an html collection if more than one and also that elements object 
+
+
+If you type an element that is not on the page you get an empty collection back 
+
+Since we are potentially getting more than one element returned back to us we are always going to get a collection not a sigular one 
+
+What you get back is an HTML collection which is an array like object but IT IS NOT AN ARRAY, it is an object but we can do some arrayish things
+
+const inputs = document.getElementsByTagName('input')
+//inputs
+HTMLCollection(3) [input, input, input]
+
+We can use array indices: 
+inputs[0] 
+
+to grab the first input on the dom 
+
+We can also get the length: 
+
+inputs.length 
+
+But if we try to use array methods: 
+
+inputs.pop()
+
+ERROR!!!! 
+
+But you can iterate over them! 
+
+for(let input of inputs){console.log(input)}
+
+since inputs is an iterable we can also use the spread operator to turn it in to an array 
+
+[...inputs]
+//(3) [input,input,input]
+
+now we can store it to a variable: 
+
+const arr = [...inputs]
+
+alot of the time we just loop over object/arrays to get certain or all values with JS or change a style and so on 
+but what if we wanted to intercept values from a form 
+
+same priciple we just use .value in our code block of our loop: 
+for(let input of inputs){console.log(input.value)}
+//BENNNNNNNNN
+//hello
+
+REMEBER getElementsByTagName returns an array like object but it is not an array, but we can iterate over it like an array.
+Each element in the array like object is an actual object, and it has a bunch of properties that we can do things with.
+
+To get to it we pass in a string with a valid tag name 
+
+
+
+getElementsByClassName -- 
+_______________________________
+
+this will grab elements by their class name. traditionally we use class name in our markup to style with css and if we want to select based off
+our classes we have a special method to do just that! 
+
+document.getElementsByClassName('string of class')
+
+That s tells us that we will get a collection of elements back not just a singular one 
+
+document.getElementsByClassName('header')
+HTMLCollection [h1.header]
+
+document.getElementsByClassName('special')
+HTMLCollection(2) [li.special, li.special]
+
+Again we get a collection even if there is one element inside of it, they look like arrays but they are an array like object 
+meaning we can iterate over them, but none of the fancy array methods come with it 
+
+What if we had the same class name for two different elements lets look at the class of special now: 
+
+document.getElementsByClassName('special')
+HTMLCollection(3) [p.special, li.special, li.special]
+
+we get our p tag and our two li's.  if we wanted to single out the first li we would have to find the parent element, return that object and 
+then find its index and save it to a variable so that all the special tags dont get affected: 
+
+const ul = document.getElementsByTagName('ul')[0]
+
+Now when we type ul we get our object retruned back to us, now we can search within that ul by itslef by calling the variable:
+
+ul.getElementsByClassName('special')
+HTMLCollection(2) [li.special, li.special]
+
+Notice that we do not get the p tag with the same class name returned to us. 
+
+Its important to note here that we can do: 
+
+ul.getElementsByTagName('li')
+
+And get all the elements with the tag li within the ul 
+
+But we can not use ul.getElementById here becuase this refers to one sigular element on the entire DOM and it should only have one id of the same 
+name not mulitple elements with the same id name 
+
+
+querySelector and querySelectorAll  -- 
+_______________________________
+
+querySelector is like the Swiss Army knife of DOM Selctors- 
+A newer, all-in-one method to select a single element 
+you can also pass in a CSS selector 
+
+//Finds the first h1 element
+document.querySelector('h1')
+
+//finds the first element with the id of red 
+document.querySelector('#red')
+
+//finds the first element with class of 
+document.querySelector('.big')
+
+it replicates the way that we search for dom objects with the above three search methods 
+
+You can use this for virtually eveything you need to grab off the DOM it just hasnt been around as long as the others 
+
+querySelectorAll -- does the same thing but will return a collection of elements with the string that you pass in 
+
+If we wanted to grab the h1 on the page: 
+document.querySelector('h1')
+
+
+If we wanted to select the first p tag on the page: 
+document.querySelectorAll('p')
+
+BUT REMEMBER IT WILL ONLY SELECT THE FIRST MATCH IT FINDS  
+
+We can also do more complex things like select an element by its id: 
+
+document.querySelectorAll('#man-photo')
+
+Will return the photo on the page with that id 
+
+Also we could find the p tag with the id of main: 
+
+document.querySelector('#main')
+
+which would return the second paragraph on the DOM.
+
+IMPORTANT-- both getElementById('main'), and document.querySelector('#main') when saved to a variable and looked up with:
+console.dir()
+
+BOTH WILL RETURN AN OBJECT!!!!!!
+
+We can also do the same with class names with querySelector: 
+
+document.querySelector('.special')
+<p class=​"special">​A:LKDHFLKDJ:LS"SD"F​</p>​
+
+This will return the first element on the DOM with the class name of special 
+
+you can also get a but more complex and find an li with the class name of special just like you would in CSS: 
+
+document.querySelector('li.special')
+<li class=​"special">​…​</li>​
+
+and it will return you the first li element with a class name of special 
+
+Lets say that we wanted to get our new li with the class of specail returned to us:
+
+document.querySelector('.special')
+
+we only get the first element returned to us. 
+
+document.querySelector('li.special')
+
+STILL only the first li with the that class name will get returned to us. 
+
+WE CAN USE VALID CSS TO ATTAIN THE LI TAG WITH THE CLASS NAME OF SPECIAL AND THE VALUE OF "Peas":
+
+document.querySelector('section li.special')
+<li class=​"special">​…​</li>​
+
+We could even take it a step further and call it by the section and then the ul and then the li: 
+
+document.querySelector('section ul li.special')
+<li class=​"special">​…​</li>​
+
+Just to show you that we can use valid CSS with the querySelectorAll method 
+
+We also get elements by their attributes say we wanted to get the input tag with the type of password, just use a CSS selector: 
+
+document.querySelector('input[type=password]')
+<input type=​"password" placeholder=​"Password">​
+
+
+querySelector vs. querySelectorAll-- 
+
+document.querySelector('input') -- will give you the first element it finds 
+document.querySelectorAll('input') -- will give you a list of all the elements that are an input tag  
+
+
+We can also use querySelectorAll to get a collection by id and class name just the same way we did as above.  But again 
+instead of returning the first element with this class name or id name it will return a list of them: 
+
+document.querySelectorAll('.special') -- returns all items with an in id of special
+document.querySelectorAll('li.special') -- returns all lis with an id of special
+document.querySelectorAll('#main') -- returns all elements with a class of main 
+
+Instead of an HTML Collection being returned to us we get a NODE list -- all in all they are the same. 
+
+Which means we can iterate over them just like before.  Because they are an array like object but not an actual array. 
+
+AT THE END OF THE DAY querySelectorAll AND querySelector IS THE WAY TO GO ONLY BECAUSE YOU CAN GET VERY VERY VERY SPECIFIC WITH ALL OF IT BY PASSING 
+IT A CSS SELECTOR 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

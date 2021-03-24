@@ -19,14 +19,14 @@ input[type="password"] {
 	width: 100px;
 }
 
-img:hover {
+/* img:hover {
 	transform: skew(-10deg);
 	/* transform-style: preserve-3d; */
-	color: #ff7a59;
-	border: #ff7a59 solid 1px;
-	background: #fff;
-}
+	/* color: #ff7a59; */
+	/* border: #ff7a59 solid 1px; */
+	/* background: #fff; */
+/* } */ 
 
-button:hover {
+/* button:hover {
 	color: teal;
-}
+} */
