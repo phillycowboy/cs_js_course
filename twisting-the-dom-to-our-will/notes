@@ -5,3 +5,267 @@ WORKING WITH innerText AND textContent --
 
 __________________________________________________
 
+Now that we have seen the process on how to select elements on the DOM now we need to see how to manipulate them. 
+
+Properties and Methods (the important ones): 
+__________________________________________________  
+
+classList 
+getAttribute()
+setAttribute()
+appendChild()
+append()
+prepend()
+removeChild()
+remove()
+createElement
+innerText
+textContent
+innerHTML 
+value 
+parentElement 
+children 
+nextSibling 
+previousSibling 
+style 
+
+
+In this section we are going to talk about how to get text from an element in the DOM 
+
+lets start by selecting the h1: 
+
+document.querySelector('h1')
+
+save it to a variable: 
+const h1 = document.querySelector('h1')
+
+
+and the first property we will see is called innerText: 
+h1.innerText
+//"TWISTING THE DOM TO OUR WILL"
+
+So innerText will give us the text that is inbetween both of the h1 tags.
+
+What if we had nested innerText with a ul that had li's: 
+const ul = document.querySelector('ul')
+
+ul.innerText
+//"First Thing
+Second Thing
+Third Thing"
+
+the text is inside of the li but the li is a child of the ul.  When we selected the ul the children came with it. so when we call innertext 
+on a parent element we get all of the text that is inside of it! 
+
+we could also do this to get all of the text on the page: 
+
+document.body.innerText
+//"TWISTING THE DOM TO OUR WILL
+
+Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquam doloremque et beatae dolor quia placeat exercitationem minima vel itaque suscipit, unde velit ea earum quis maiores ex atque magni animi.
+
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate adipisci sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum quibusdam aperiam nemo dolorum.
+
+  
+WELCOME
+
+A:LKDHFLKDJ:LS"SD"F
+
+First Thing
+Second Thing
+Third Thing
+Carrots
+Peas
+Broccoli
+CLICK ME!"
+
+Reading innerText is great but we can also do things with it in the DOM-- 
+
+Here we have out h1: 
+h1.innerText
+//"TWISTING THE DOM TO OUR WILL"
+
+What if we wanted to change it? 
+
+h1.innerText = "Hello there!"
+//"Hello there!"
+
+Obviously when we refresh the page the changes would be gone since we are only doing it in the DOM- 
+But if we ran it in a script we could change it permanantly 
+
+It's pretty silly to update the innerText of an h1 when we could just update the HTML, but thats where events come in. 
+
+If we wanted to update the ul: 
+
+ul.innerText = "I AM A BIG UL"
+//"I AM A BIG UL"
+
+All three of the li's are now gone. 
+
+There is a second way to access the text within an element on the DOM and that way is called textContent.  On the surface it might seem the same 
+as innerText
+Heres our h1 again: 
+
+const h1 = document.querySelector('h1')
+h1.innerText
+//"TWISTING THE DOM TO OUR WILL"
+
+h1.textContent
+//"TWISTING THE DOM TO OUR WILL"
+
+we can also set content the same way we did before: 
+
+h1.textContent = "AHH IVE CHANGED"
+//"AHH IVE CHANGED"
+
+lets look at our p tag with an in id of main: 
+
+In the html it looks like this: 
+
+    <p id="main">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate
+        adipisci
+        sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum
+        quibusdam aperiam nemo dolorum.</p>
+It definitely has some weird spacing going on but now lets grab it in a variable and compare with innerText and textContent:
+
+const p = document.querySelector('#main')
+
+
+p.innerText
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate adipisci sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum quibusdam aperiam nemo dolorum."
+
+p.textContent
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate
+        adipisci
+        sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum
+        quibusdam aperiam nemo dolorum."
+
+It knows about the dynamic spacing that is going on within the HTML if you added anything else like a script tag with the p tag that would 
+show up as well: 
+
+innerText: 
+p.innerText
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate adipisci sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum quibusdam aperiam nemo dolorum."
+
+textContent: 
+p.textContent
+"Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis dignissimos similique cupiditate
+        adipisci
+        sequi. Repudiandae cupiditate non corrupti quidem porro. Illum consectetur praesentium suscipit, quod laborum
+        quibusdam aperiam nemo dolorum.
+        console.log("HI!")
+    "
+the innerText will look at only the innerText that is showing up on the DOM, textContent will show all text within an element.  It will show
+all text and text that is meant to be hidden 
+
+That is the difference between innerText and textContent, you can use both of them to access the text within the DOM one will give you wayyyyy
+more than the other one. 
+
+
+
+innerHTML -- 
+__________________________________________________
+what innerHTML is going to do is retreive or return not only the text inside of an element but also all given tags inside of an element 
+so if we were to select form.innerHTML we would get all of the elements inside that form as well 
+
+const form = document.querySelector('form')
+
+form.innerText
+//"  "
+
+BUT IF WE USE innerHTML: 
+
+form.innerHTML
+//"
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <input type="submit">
+    "
+We recieve a string with all of the elements inside 
+
+
+Now lets do it on the ul : 
+
+const ul = document.querySelector('ul')
+
+ul.innerHTML
+//"
+        <li class="special">First Thing</li>
+        <li>Second Thing</li>
+        <li class="special">Third Thing</li>
+    "
+
+
+We also now can update elements by setting values with innerHTML like so: 
+
+form.innerHTML = 'adad;kfja;dklja;sdlfjka'
+//"adad;kfja;dklja;sdlfjka"
+
+That whole form now that contained three different elements is now just jibberish 
+
+
+But we can now also add HTML elements into the HTML page or the DOM: 
+By setting the value to a string we can write HTML in the value of innerHTML and update the DOM 
+
+form.innerHTML = '<b>I AM A BOLD TAG</b>'
+//"<b>I AM A BOLD TAG</b>"
+
+By doing this it is parsing the string and taking out the bits and figuring out what is in there and where it should be 
+then it will reflect those changes in the DOM 
+
+another thing about innerHTML is that you can add things to elements without irradicating them completely lets look at our h1 again: 
+
+
+grab it: 
+const h1 = document.querySelector('h1')
+
+find the innnerHTML: 
+h1.innerHTML
+"TWISTING THE DOM TO OUR WILL"
+
+then add to it: 
+h1.innerHTML += ' is so coooooooool!'
+//"TWISTING THE DOM TO OUR WILL is so coooooooool!"
+
+The difference between innerText and innerHTML: 
+
+Lets say that we wanted to add some elements to our h1 again: 
+
+h1.innerHTML += '<b>!?!?!?!?!?!?!?!?!?</b>'
+//"TWISTING THE DOM TO OUR WILL is so coooooooool!<b>!?!?!?!?!?!?!?!?!?</b>"
+We added a bold tag with some punctuation, it showed up here but the b tags did not show up on the DOM whereas if you use innerText: 
+
+h1.innerText += '<b>!?!?!?!?!?!?!?!?!?</b>'
+"TWISTING THE DOM TO OUR WILL is so coooooooool!!?!?!?!?!?!?!?!?!?<b>!?!?!?!?!?!?!?!?!?</b>"
+
+It will think that you want those b tags as a literal part of your h1 text and will show up in the DOM.
+It wont treat them as elemments and will not parse them, it will treat them as literal text in between the element you are adding on to 
+
+
+innerText -- will take the string you pass in and treat it as literal text 
+innerHTML -- will take the string that you pass in and parse it and know that you are trying to add elements as well! 
+
+
+
+
+VALUE, SRC, HREF AND MORE -- 
+__________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
