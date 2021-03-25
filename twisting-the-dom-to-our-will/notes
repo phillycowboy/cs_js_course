@@ -480,8 +480,373 @@ These properties are nice to use when you need to find the parent of a child nod
 CHANGING MULTIPLE ELEMENTS -- 
 __________________________________________________
 
-START HERE TOMORROW!!! 
+We know how to get multiple elements at one time, either querySelectorAll, or getElementsByTagName or getElementsByClassName 
 
+But what happens when we get them, what can we do with them, we can iterate over them since they are an array like object 
+
+and either get info or change a property. 
+
+We will be making examples in app.js 
+
+Changing Mulitple Elements for the DOM follows the same pattern: 
+
+-Find the object/objects or thing that you want to manipulate and set it to a varaiable 
+-Then loop/iterate over the collection of objects or things 
+-Then manipulate them or change them in the code block to reflect inside the DOM 
+
+
+IF YOU HAVE ONE THING YOU CAN MANNIPULATE IT DIRECTLY 
+
+
+IF YOU HAVE MULITPLE THINGS YOU HAVE TO LOOP 
+
+
+ALTERING STYLES -- 
+__________________________________________________
+
+So every element that we select has a style property that we can utilize in JS 
+
+We can find an element by calling .style on it to see its style properties, even if you give it a color and font size it will not show 
+up in the style object unless you define a style in line in the HTML which you dont want to do. 
+
+in CSS we would declare a style with -- background-color 
+
+in JS the style names are camelCased -- backgroundColor 
+
+ALL STYLE PROPERTIES IN JS ARE CAMELCASED 
+
+by using .style this way we are setting style attributes in line with the element in the HTML file. 
+
+And if we want to change multiple styles on one element we would have to write one line for every change 
+
+We already had a color chosen for the li's so why did it override it.  Anytime you are defining styles in JS they will be inline styles 
+with the element so it will always take presedence 
+
+
+
+getComputedStyle-- 
+
+__________________________________________________
+
+
+we can pass in an element that we have already selected to a method called getComputedStyle(element) and recieve a list or a object of 
+CSSStyleDeclaration for the certain element 
+
+getComputedStyle(li);
+
+CSSStyleDeclaration {0: "align-content", 1: "align-items", 2: "align-self", 3: "alignment-baseline", 4: "animation-delay", 5: "animation-direction", 6: "animation-duration", 7: "animation-fill-mode", 8: "animation-iteration-count", 9: "animation-name", 10: "animation-play-state", 11: "animation-timing-function", 12: "appearance", 13: "backdrop-filter", 14: "backface-visibility", 15: "background-attachment", 16: "background-blend-mode", 17: "background-clip", 18: "background-color", 19: "background-image", 20: "background-origin", 21: "background-position", 22: "background-repeat", 23: "background-size", 24: "baseline-shift", 25: "block-size", 26: "border-block-end-color", 27: "border-block-end-style", 28: "border-block-end-width", 29: "border-block-start-color", 30: "border-block-start-style", 31: "border-block-start-width", 32: "border-bottom-color", 33: "border-bottom-left-radius", 34: "border-bottom-right-radius", 35: "border-bottom-style", 36: "border-bottom-width", 37: "border-collapse", 38: "border-end-end-radius", 39: "border-end-start-radius", 40: "border-image-outset", 41: "border-image-repeat", 42: "border-image-slice", 43: "border-image-source", 44: "border-image-width", 45: "border-inline-end-color", 46: "border-inline-end-style", 47: "border-inline-end-width", 48: "border-inline-start-color", 49: "border-inline-start-style", 50: "border-inline-start-width", 51: "border-left-color", 52: "border-left-style", 53: "border-left-width", 54: "border-right-color", 55: "border-right-style", 56: "border-right-width", 57: "border-start-end-radius", 58: "border-start-start-radius", 59: "border-top-color", 60: "border-top-left-radius", 61: "border-top-right-radius", 62: "border-top-style", 63: "border-top-width", 64: "bottom", 65: "box-shadow", 66: "box-sizing", 67: "break-after", 68: "break-before", 69: "break-inside", 70: "buffered-rendering", 71: "caption-side", 72: "caret-color", 73: "clear", 74: "clip", 75: "clip-path", 76: "clip-rule", 77: "color", 78: "color-interpolation", 79: "color-interpolation-filters", 80: "color-rendering", 81: "column-count", 82: "column-gap", 83: "column-rule-color", 84: "column-rule-style", 85: "column-rule-width", 86: "column-span", 87: "column-width", 88: "content", 89: "cursor", 90: "cx", 91: "cy", 92: "d", 93: "direction", 94: "display", 95: "dominant-baseline", 96: "empty-cells", 97: "fill", 98: "fill-opacity", 99: "fill-rule", …}
+
+
+If you scroll down in console you will notice that you have key/value pairs for all CSS properties 
+
+Most of them are default values that are already given to the properties, not always the ones youve set 
+
+If you set a variable to the method of getComputedStyle on an element that you have chosen and choose to update the style 
+within the variable getComputedStyle will now hold the styles that you have set within the object 
+
+baiscally getComputedStyle is a method that will return a massive object that features properties that have been calculated in CSS 
+
+
+MANNIPULATING CLASSES --    
+__________________________________________________
+
+A much better way to add multiple styles at once 
+
+We could go one by one and manipulate the element with eventlisteners and so on, but we could also define a class 
+in CSS and give it the properties that we have jst defined: 
+
+lets go with: .done{
+
+}
+
+Now we have this class that the element does not have and selectively apply it 
+
+If we used setAttribute('class', 'done') on the element it would change but it would also change the class in line with the element 
+and no longer have a class of todo instead its class would be done. 
+
+
+This is where classList comes into play. We can call classList on an object and have a multiple number of methods at our disposal 
+
+
+The easiest way to remove a class is to call remove on classList: 
+li.classList.remove('class you want removed')
+
+const li = document.querySelector('li')
+
+li.getAttribute('class')
+"todo"
+
+li.setAttribute('class', 'done')
+
+*this will override the class in line in the HTML 
+
+you also have: 
+
+li.classList.add('class', 'done') -- this will add a class that you have made to an element 
+li.classList.remove('class', 'done') -- this will remove a class that you have made
+
+you also have toggle -- 
+
+li.classList.toggle('class', 'done') -- if a class has not been applied than it will be false, it so it will be true this is super useful 
+because we toggle classes all the time 
+
+also by sepeartaing our concerns we are making the CSS file handle the style and the class of the element instead of writing stylesheets with JS
+
+But now through JS we can selectively apply and remove, and toggle that class by calling it 
+
+IF YOU ARE CREATING A STYLE ONE TIME GO AHEAD AND DO .style 
+
+BUT IF YOU ARE MAKING A HUNDRED DIFFERENT STYLES AND NEED TO ADD OR REMOVE OR TOGGLE IT-- 
+
+-DEFINE A CLASS IN CSS 
+-MANIPULATE IT THROUGH JS WITH EVENTS!
+
+
+
+
+
+CREATING ELEMENTS  and appendChild() -- 
+__________________________________________________
+
+Creating elements from scratch 
+
+To do that we have an element called .createElement 
+document.createElement('h2')
+<h2>​</h2>​
+
+And thats all we get it makes an empty element for us 
+
+Now lets save it to a variable and console.dir the new element: 
+
+const newH2 = document.createElement('h2')
+console.dir(newH2)
+//newH2 object 
+
+So if we want to put some content in that is a seperate step all we did was make an element: 
+
+newH2.innerText = "I LIKE ANIMALS!"
+"I LIKE ANIMALS!"
+
+newH2
+<h2>​I LIKE ANIMALS!​</h2>​
+
+We can also add a class if we want: 
+
+newH2.classList.add('special')
+
+newH2
+<h2 class=​"special">​I LIKE ANIMALS!​</h2>​
+
+Now that we have added all of this...HOW DO WE GET IT IN THE DOM????????????
+
+what we need to do is select an element to APPEND it too. 
+
+We have some methods available to us to use: 
+
+appendChild()
+
+is a method that we call on a parent that we want to append an element into.
+So if we wanted to append it into our section on our html: 
+
+    <section>
+        <ul>
+            <li>Carrots</li>
+            <li class="special">Peas</li>
+            <li>Broccoli</li>
+        </ul>
+    </section>
+
+We would call appendChild() on the section and pass in our newH2 
+
+so what we would do is select and save to a variable our section: 
+
+const section = document.querySelector('section')
+
+section
+<section>​…​</section>​
+
+then we would call section.appendChild(newH2) and pass in our newH2 
+
+section.appendChild(newH2)
+<h2 class=​"special">​I LIKE ANIMALS!​</h2>​
+
+When we append it will go to the end of the children so to the bottom of our list.
+
+Now lets try making an image: 
+
+see examples in app.js: 
+
+// making a new image or element and appending it to the DOM 
+
+const newImg = document.createElement('img');
+
+// newImg
+//     < img >
+
+// console.dir(newImg)  in console 
+
+newImg.src = "https://images.pexels.com/photos/2761930/pexels-photo-2761930.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260";
+newImg.style.width = "200px";
+
+document.body.appendChild(newImg);
+
+// so this process is very common we make a new empty element of some type
+// and then we fill in the blanks when appropriate-- we fill in innerText when we need too or the img src or href or other attributes 
+
+// NOW lets make a new anchor tag given the steps we just followed 
+
+// video link https://www.youtube.com/watch?v=ByFlKFY6iag
+
+const newA = document.createElement('a');
+newA.innerText = "GOD OF THUNDER"
+newA.href = "https://www.youtube.com/watch?v=ByFlKFY6iag"
+
+const firstP = document.querySelector('p');
+
+firstP.appendChild(newA);
+
+// SO THIS IS THE PROCESS OF CREATING ELEMENTS 
+
+// -YOU CREATE AND EMPTY ELEMENT AND SET IT TO A VARIABLE 
+//  const newElement = documnet.createElement('tagname')
+
+// THEN YOU FILL THE CONTENT IF YOU NEED TOO 
+// newElement.innerText = "HELLO THERE!"
+
+// THEN YOU FIND A PARENT TO APPEND IT TO, IF YOU APPEND IT A PARENT OR THE BODY IT WILL SHOW UP LAST 
+
+// document.body.appendChild(newElement) -- should be on the page when you refresh 
+
+// const section = document.querySelector('section')
+// section.appendChild(newElment)
+
+// THERE YOU HAVE IT YOU WERE MAKING IT SUPER COMPLICATED BEFORE!!!!!!!!!!!!!!!!!
+
+
+APPEND, PREPEND, and insertBefore -- 
+__________________________________________________
+
+Using appendChild we have to attach a node to a parent element, and it will always assign it at the end.  But what if we wanted to put something 
+in the beginning/top, or the middle-- 
+
+INSERTBEFORE-- 
+
+We have a new method called insertBefore
+
+With this method we have to select the parent element and the child element we want to insertBefore 
+
+we find the parent element and save it to a variable: 
+
+const ul = document.querySelector('ul')
+
+We have the element that we are creating: 
+
+const newLi = document.createElement('li')
+
+And also its content: 
+
+newLi.innerText = "IM NEW, HELLO!"
+"IM NEW, HELLO!"
+
+then we find and save the element to a variable of where we want our new created element to be placed in the dom in our case it the first child 
+li in our parent ul: 
+
+const firstLi = document.querySelector('li')
+
+then we utilize the insertBefore method, we are goning to select the parent on which to insert the new element 
+
+ul.insertBefore(newLi, firstLi)
+
+this will always take two arguments 
+
+whereItIsGoingToBeInserted.insertBefore('whatUAreInserting', 'whereYouAreInsertingItBefore')
+
+Hence the order of the method 'insert' -- what you are inserting Before-- where the new element is going before. 
+
+APPEND-- 
+
+append() is different from appendChild() because unlike appendChild() we can actually insert multiple elements at once with append()
+
+so now we have a new element i and newli if we wanted to insert the newLi within the first paragragh we could use append 
+
+so we would have to select the first paragragh: 
+
+const firstP = document.querySelector('p')
+
+then call append on firstP and pass in both the new elements: 
+
+firstP.append(i, newLi)
+
+Now both of them have been appeneded inside of that paragragh.  They will be appeneded to the end of the firstP 
+
+PREPEND--- 
+
+Is the same idea as append() expcept instead of going to the end it will now be at the beginning of the elemnet 
+
+firstP.prepend(i, newLi);
+
+
+SO APPEND AND PREPEND WILL TAKE MORE THAN ONE ELEMENT AND appendChild WILL ONLY TAKE THE ONE 
+
+
+
+removeChild and remove -- 
+__________________________________________________
+
+these methods will remove an element that we pass in they follow the same pattern as appendChild
+
+removeChild- has been around much longer and not supported by IE (internet explorer) and works much the same as appendChild where it can only take 
+one element at a time 
+
+so to use removeChild we need to find the parent of the element we are trying to remove and the child element we are trying to remove: 
+
+so lets remove Peas from the second ul: 
+
+First lets select the parent: 
+const ul = document.querySelector('section ul')
+
+Now lets get the element that we want to remove, we can just go throught the ul that we have saved to a variable: 
+
+ul.querySelector('.special')
+<li class=​"special">​…​</li>​
+
+now lets save it to a variable: 
+
+const removeMe = ul.querySelector('.special');
+
+Now we can call the method on the parent and pass in the child that we want to remove: 
+
+ul.removeChild(removeMe)
+<li class=​"special">​Peas​</li>​
+
+Now our UL only has two LI's 
+
+
+
+
+where as 
+
+remove()  is newer and works much the same as append() and prepend() 
+
+This method does not need the parent node to operate 
+
+All we need to do is select the target that we want to remove and call remove on that node 
+
+lets remove the h1 for example: 
+
+we select it and save it to a variable: 
+
+const h1 = document.querySelector('h1')
+
+and then all we need to do is call h1.remove()  we dont need the parent!!! 
+
+AND VOILA ITSSSSSSS GONE! 
+
+
+
+NBA SCORE CHARTS-- 
+
+MAKE A NEW FILE AND APP AND INDEX AND START HERE TOMORROW FRESH!!!!!
 
 
 
