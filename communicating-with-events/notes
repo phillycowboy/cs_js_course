@@ -3,3 +3,101 @@ COMMUNICATING WITH EVENTS --
 INTRO TO THE DOM -- 
 __________________________________________________
 
+EVENTS - responding to user inputs and actions!! 
+
+Events allow us to run that code that creates a new element or to remove an element or to change a color 
+when a specific interaction happens from a user 
+
+There are tons of events out there : 
+
+-click
+-drags 
+-drops
+-hovers
+-scrolls 
+-form submission 
+-key presses 
+-focus/blur 
+-mouse wheel 
+-double click 
+-copying 
+-pasting 
+-audio start 
+-screen resize
+-printing 
+
+https://developer.mozilla.org/en-US/docs/Web/Events
+
+We are going to follow a pattern so that we only have to use one method to get these events to work 
+
+
+2 WAYS NOT TO ADD EVENTS!!!!!!! -- 
+__________________________________________________
+
+so the triggers for events are different but the way we incorporate these events into our code follows the same pattern 
+
+we essentially have: 
+
+the thing (what were listening for an event on) -- we're listening to see when an event occurs on a given thing(a click on a button, drag of an image)
+
+the eventType -- what type of event that is going to occur 
+
+then 
+
+theCode -- then we tell JS here is the code that I want you to run 
+
+so for example: 
+
+the thing      the eventType         the code
+*********      *************         ********* 
+button           click                 change the color 
+input           hits return           get search results 
+image           mouseover               display the image caption    
+
+we have a button that is waiting or lisitening for a click event and when it hears it, it will trigger the code to change the color 
+
+1). DONT FUCKING DO THIS -- the first way to addEventListeners is to do it inline with the HTML
+
+so on the element we can add an attriute called onclick=""
+ <button onclick="alert("YOU CLICKED ME!")">Click Me!</button>
+
+You can add multiple onEVENTLISTENERS in line with your markup, never do this, it clutters your markup and its hard to keep organized
+
+
+2.) DONT FUCKING DO THIS-- THIS IS THE SECOND WAY OF HOW TO ADD AN EVENT LISTENER WITH YOUR JS SCRIPT 
+
+you add an element and find it and save it to a variable: 
+
+ <button id="clicker">CLICKER</button>
+ const btn = document.querySelector('#clicker');
+
+ then you use that variable and call an event on it and give it some code to run: 
+
+btn.onclick = function(){
+    alert("YOU CLICKED ME GO AWAY!!");
+}
+
+
+
+ADDEVENTLISTENER-- 
+__________________________________________________
+
+
+3.) THIS IS THE WAY -- addEventListener -- 
+
+add the element, find the element, save the element to a variable - 
+
+const btn = document.querySelector('button')
+
+button.addEventListener('click', () => {
+    alert('YOU CLICKED ME!')
+})
+
+THIS IS THE WAY *CUE MANDO MUSIC*
+
+Specify the event type and a callback to run 
+
+We are calling the method on the element and scpecifying what to do after the event is triggered-- 
+
+we can have hundreds of events on one element 
+

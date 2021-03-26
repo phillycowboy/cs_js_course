@@ -4,3 +4,8 @@ h1 {
 	font-size: 60px;
 	color: royalblue;
 }
+
+h2 {
+	text-align: center;
+	text-decoration: underline;
+}
