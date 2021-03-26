@@ -1,3 +1,8 @@
 EVENTS ON MULTIPLE ELEMENTS!!!! -- 
 ________________________________________
 
+We've seen how we can attach multiple eventlisteners to one element 
+
+but how do we attach events to multiple elements? 
+
+WE LOOP! 

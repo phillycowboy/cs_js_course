@@ -5,3 +5,17 @@ h1 {
 	font-size: 60px;
 	color: slategray;
 }
+h2 {
+	text-decoration: underline;
+	text-align: center;
+}
+#boxes {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.box {
+	width: 200px;
+	height: 200px;
+}
