@@ -6,3 +6,17 @@ h1 {
 	color: darkviolet;
 	background-color: slategray;
 }
+/* 
+#coin {
+	height: 115px;
+} */
+img {
+	width: 100px;
+	position: absolute;
+	top: 100px;
+	left: 100px;
+}
+
+#button-div {
+	text-align: center;
+}
