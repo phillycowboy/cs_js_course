@@ -75,6 +75,8 @@ btn.addEventListener('click', function () {
 
 // thoughts for extra features: 
 
+// make restart smoother
+
 // Scoreboard 
 
 // different background actions 
