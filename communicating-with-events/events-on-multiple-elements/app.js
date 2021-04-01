@@ -36,7 +36,11 @@ for(let color of colors){
 }
 
 document.body.addEventListener('keypress', function(e){
-    console.log(e);
+    console.log(e.key);
+    if(e.key === 'd'){
+        alert("You just hit the d key!");
+    }
+    
 
 })
 
