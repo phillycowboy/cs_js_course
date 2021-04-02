@@ -1,15 +1,23 @@
-// window.addEventListener('DOMContentLoaded', function(){
-//     const h1 = document.querySelector('h1');
-//     h1.addEventListener('mouseover', () => {
-//         document.body.style.backgroundColor = 'pink';
-//         h1.style.fontSize = '600px';
-//     })
-//     h1.addEventListener('mouseout', () => {
-//         document.body.style.backgroundColor = 'white';
-//         h1.style.fontSize = '2em';
-//     })
+window.addEventListener('DOMContentLoaded', function(){
+    const form = document.querySelector('#signup-form');
+    const creditCard = document.querySelector('#cc');
+    const checkBox = document.querySelector('#checkbox');
+    const veggieSelect = document.querySelector('#veggie');
 
-// })
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        // what this will do is prevent the default behavior of the form.
+        alert('SUBMITTED THE FORM!');
+        console.log('cc',creditCard.value );
+        console.log('cb',checkBox.checked);
+        console.log('v',veggieSelect.value );
+        // from here we could do the following
+        // send data to db 
+        // append something to page using form data 
+        
+    })
+
+})
 
 
 
