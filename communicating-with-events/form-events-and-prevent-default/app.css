@@ -1,6 +1,41 @@
 h1 {
 	text-align: center;
 	text-decoration: underline;
+	text-shadow: silver 1px 0 10px;
 	color: skyblue;
 	border: 2px solid black;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px slategray;
+}
+h4 {
+	color: whitesmoke;
+}
+div#form {
+	/* display: flex; */
+	background-color: skyblue;
+	text-align: center;
+	/* padding-left: 75px; */
+	margin-top: 50px;
+	margin-right: 250px;
+	margin-left: 250px;
+	border-radius: 10px;
+	box-shadow: 10px 5px 5px slategray;
+}
+input#cc {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+input#checkbox {
+	margin-bottom: 20px;
+}
+select#veggie {
+	margin-bottom: 20px;
+}
+input#submit {
+	margin-bottom: 20px;
+}
+
+body {
+	/* color: whitesmoke; */
+	background-color: whitesmoke;
 }

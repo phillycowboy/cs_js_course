@@ -11,22 +11,23 @@
 
 <body>
     <h1>Form Events and Prevent Default</h1>
-
-    <form id="signup-form">
-        <input name="creditcard" type="text" placeholder="credit card #" id="cc">
-        <label>
-            I agree to seel my soul to your company.
-            <input name="terms" type="checkbox" id="checkbox">
-        </label>
-        <select name="selectedVeggie" id="veggie">
-            <option value="eggplant">Eggplant</option>
-            <option value="asparagus">Asparagus</option>
-            <option value="carrot">Carrot</option>
-        </select>
-        <input type="submit">
-    </form>
-
-    <script src="app.js"></script>
+    <div id="form">
+        <h4>Please Enter Your Information</h4>
+        <form id="signup-form">
+            <input name="creditcard" type="text" placeholder="credit card #" id="cc"><br>
+            <label>
+                I agree to seel my soul to your company.
+                <input name="terms" type="checkbox" id="checkbox">
+            </label><br>
+            <select name="selectedVeggie" id="veggie">
+                <option value="eggplant">Eggplant</option>
+                <option value="asparagus">Asparagus</option>
+                <option value="carrot">Carrot</option>
+            </select><br>
+            <input type="submit" id="submit">
+        </form>
+    </div>
+    <script src="app.js" defer></script>
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-// window.addEventListener('DOMContentLoaded', function(){
+// document.addEventListener('DOMContentLoaded', function(){
     const form = document.querySelector('#signup-form');
     const creditCard = document.querySelector('#cc');
     const checkBox = document.querySelector('#checkbox');
@@ -26,6 +26,7 @@
             console.log(formData);
         })
     }
+
 
     // AN INPUT EVENT WILL FOCUS ON THE INDIVIDUAL INPUT A CHANGE EVENT ON AN INPUT WILL ONLY FIRE ONCE YOU CLICK OUTSIDE OF THE TEXT INPUT 
     // OR HIT ENTER 
