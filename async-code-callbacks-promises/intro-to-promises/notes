@@ -1,0 +1,16 @@
+INTRO TO PROMISES -- 
+___________________________________________________________
+
+ABSTRACTED CALLBACKS!!! 
+
+EXAMPLES IN APP.JS 
+
+PROMISES -- A promise is an object representing the eventual completion or failure of an asynchronous operation 
+
+PROMISES - a pattern for writing async code. 
+
+
+Resolve, Reject 
+
+A promise is a returned object to which you attach callbacks, instead of passing callbacks into a function 
+
