@@ -106,25 +106,50 @@
 
 
 // Creating a new promise 
-const willGetYouADog = new Promise((resolve, reject) => {
+// const willGetYouADog = new Promise((resolve, reject) => {
     // if we call resolve the promise will be resolved 
     // resolve();
     // if we call reject the promise will be rejected 
     // reject();
 
-    const rand = Math.random();
-    if(rand < 0.5){
-        resolve();
-    }else{
-        reject();
-    }
-})
+//     const rand = Math.random();
+//     if(rand < 0.5){
+//         resolve();
+//     }else{
+//         reject();
+//     }
+// })
 // how we run code based on if our promise was either resolved or rejected --> .then 
 //will run when this promised is resolved 
-willGetYouADog.then(() => {
-    console.log('YAY WE GOT A DOG!');
-})
-willGetYouADog.catch(() => {
+// willGetYouADog.then(() => {
+//     console.log('YAY WE GOT A DOG!');
+// })
+// willGetYouADog.catch(() => {
     // for when a promise gets rejected this code will run 
-    console.log('NO DOG FOR YOU!');
+//     console.log('NO DOG FOR YOU!');
+// })
+
+// Returning Promises from Functions -- theres only a couple of videos left on the same topic
+// not going to make new files....
+
+const makeDogPromise = () => {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            const rand = Math.random(); 
+            if(rand < 0.5){
+                resolve();
+            }else {
+                reject();
+            }
+        }, 5000);
+    });
+
+};
+makeDogPromise()
+.then(() => {
+    console.log("YAY WE GOT A DOG!");
 })
+.catch(() => {
+    console.log("NO DOG FOR YOU!");
+});
+
