@@ -1,0 +1,1 @@
+// alert('the pages are connected!');
