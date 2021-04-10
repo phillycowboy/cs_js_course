@@ -1,4 +1,55 @@
 HOW ASYNC CALLBACKS ACTUALLY WORK -- 
 _____________________________________________
 
-START HERE WHEN YOU CAN!!!!!!
+
+What happens when something takes a long time? 
+
+const newToDo = input.value; // get user input 
+saveToDatabase(newToDo); // this could take awhile! 
+input.value = ''; //reset form 
+
+
+Fortunately we have a workaround -- CALLBACKS?!?!?!!
+
+console.log('I print first');
+setTimeout(() => {
+    console.log('I print after 3 seconds')
+}, 3000);
+console.log('I print second');
+
+If JS does everything one at a time, how is it setting a timer for three seconds while logging the first two? 
+This seems like it shouldnt work, even if we had code after the last log it would get run before the timeout. 
+
+
+The trick here is that the browser does the work. JS is not the same thing as your browser, JS is a language that is implemented in your 
+browser.  Broswers: Chrome, IE, Safari, are usually written in C++, and the browser is capable of doing certain tasks that JS cant or things 
+that take time. They are handed off to the browser. So JS says here is this thing i need you to do for me, the browser takes over. And then when 
+its done it reminds JS ok your turn again. So JS is not setting a timer, or keeping track of the amount of seconds that have gone by, JS is not 
+sending a request to an API, the browser actually handles it. 
+
+Ok but how? 
+
+- Browsers come with Web API's that are able to handle certain tasks in the background (like making requests or setTimeout) 
+- The JS call stack recognizes these WEB API functions and passes them off to the browser to take care of
+- Once the browser finishes those tasks, they return and are pushed onto the stack as a callback
+
+console.log('I print first');
+//JS runs this line of code and logs in the console then it gets to setTimeout
+
+setTimeout(() => {
+    console.log('I print after 3 seconds')
+}, 3000);
+//setTimeout is something that the browser will do for us, or for JS, JS is asking the browser to set a timer for three seconds to remind 
+JS to log the line of code after three seconds. 
+console.log('I print second');
+//now JS moves onto the last line of code until the broswer reminds JS of the time that has elapsed and it will go back to the second line of 
+code and run that function 
+
+JS is not setting a timer, or making a request, the browser is. 
+
+The browser is actually resposible for adding a new function to the call stack. 
+
+So JS when it needs to, if you are setting a timeout or waiting for an eventlistener to fire, JS will pass it off to the browser, when appro
+priate the broswer will then remind JS HEY you wanted this to happen! and JS will fire those functions in the callstack. 
+
+
