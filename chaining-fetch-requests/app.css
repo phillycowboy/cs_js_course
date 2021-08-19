@@ -1,0 +1,14 @@
+#header-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: black;
+	border-radius: 10px;
+}
+
+#header {
+	color: indigo;
+	background-color: lightblue;
+	border: white 5px;
+	border-radius: 10px;
+}
