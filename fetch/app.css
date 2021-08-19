@@ -1,0 +1,22 @@
+#header-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#header {
+	color: aqua;
+	background-color: grey;
+	/* margin-right: 100vh; */
+	/* margin-left: 5% */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 5px;
+}
+
+#fetch-div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
