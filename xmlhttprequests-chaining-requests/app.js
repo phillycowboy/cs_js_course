@@ -67,3 +67,13 @@ fetch("https://swapi.dev/api/planets")
     console.log("SOMETHING WENT WRONG WITH FETCH")
     console.log(err)
 })
+
+// refactored fetch with built in callback functions
+
+fetch("https://swapi.dev/api/planets")
+.then(checkStatusAndResponse)
+.then(printPlanets)
+.then(get10MorePlanets)
+.then(checkStatusAndResponse)
+.then(printPlanets)
+.then(get10MorePlanets)
