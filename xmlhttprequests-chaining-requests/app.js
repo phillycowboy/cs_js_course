@@ -30,6 +30,8 @@
 // firstReq.send();
 // console.log("Request sent")
 
+// testing
+
 const checkStatusAndResponse = (response) => {
     if(!response.ok)
     throw new Error(`Status Code Error: ${response.status}`)
