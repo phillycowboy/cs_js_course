@@ -1,0 +1,1 @@
+console.log("%casync keyword", "color: green")
