@@ -12,6 +12,10 @@ const moveX = (element, amount, delay) => {
 			if (elRight + amount > bodyBoundary) {
 				reject({ bodyBoundary, elRight, amount });
 			}
+            // else if(currLeft + amount < bodyBoundary){
+            //     reject({ bodyBoundary, currLeft, amount });
+            // }
+            // tried to move it back to the right if it hit the left side of the screen. 
 			else {
 				element.style.transform = `translateX(${currLeft + amount}px)`;
 				resolve();
@@ -21,9 +25,30 @@ const moveX = (element, amount, delay) => {
 };
 
 const btn = document.querySelector('button');
-async function moveRight(el){
-    
+async function animateRight(el, amt){
+    // calling moveX with an element, moving it 100 pixels, every second.
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
+    await moveX(el, amt, 1000);
 }
+// then we call animateRight which is our async function and passing in the el that moveX needs to operate.
+animateRight(btn, 100).catch((err) => {
+    console.log("ALL DONE");
+    animateRight(btn, -100);
+    
+})
+// .catch((err) => {
+//     animateRight(btn, 100);
+// })
+// have to pass in the btn as the el in this case. should move only twice. 
 
 
 
