@@ -21,23 +21,30 @@ const moveX = (element, amount, delay) => {
 };
 
 const btn = document.querySelector('button');
-moveX(btn, 100, 1000)
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.then(() => moveX(btn, 100, 1000))
-	.catch(({ bodyBoundary, amount, elRight }) => {
-		console.log(`Cannot Move! Body is ${bodyBoundary}px wide`);
-		console.log(`Element is at ${elRight}px, ${amount}px is too large!`);
-	});
+async function moveRight(el){
+    
+}
+
+
+
+// const btn = document.querySelector('button');
+// moveX(btn, 100, 1000)
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.then(() => moveX(btn, 100, 1000))
+// 	.catch(({ bodyBoundary, amount, elRight }) => {
+// 		console.log(`Cannot Move! Body is ${bodyBoundary}px wide`);
+// 		console.log(`Element is at ${elRight}px, ${amount}px is too large!`);
+// 	});
