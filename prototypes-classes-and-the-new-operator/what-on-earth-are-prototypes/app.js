@@ -84,3 +84,7 @@ console.log(arr);
 // this is the template object that references the properties of arrays. 
 
 // even document.body has a prototype that has certain built in properties that automatically come along with it. 
+
+// so certain data structures and even the dom have prototypes, we can find this out by typing Array.prototype and it will list all of its function in the prototype object 
+
+// PICK BACK UP SUNDAY/MONDAY YOURE GETTING THERE! 
