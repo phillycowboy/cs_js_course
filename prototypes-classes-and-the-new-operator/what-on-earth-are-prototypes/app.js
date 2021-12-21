@@ -87,4 +87,29 @@ console.log(arr);
 
 // so certain data structures and even the dom have prototypes, we can find this out by typing Array.prototype and it will list all of its function in the prototype object 
 
+// we can even set functions to different types of prototypes so lets use a String.protoype
+String.prototype.grumpus = () => {alert("GO AWAY!!")}
+
+// and in console we have this: 
+// String.prototype
+// String {'', grumpus: ƒ, constructor: ƒ, anchor: ƒ, big: ƒ, …}
+
+// and if we call this function we need a string to attach it to
+// const cat = "Blue"
+// cat.grumpus();
+// console.log(cat.grumpus())
+
+// we should get an alert in our document that says "GO AWAY!!"
+
+// now lets add a different property called yell, we need to access the String.prototype first. 
+// we always need to access the string object to add on to it 
+String.prototype.yell = function(){
+    console.log(this);
+    console.log(this.toUpperCase());
+}
+
+const str = "hello"
+str.yell();
+
+// this is reffering to the string of ""
 
