@@ -111,5 +111,6 @@ String.prototype.yell = function(){
 const str = "hello"
 str.yell();
 
-// this is reffering to the string of ""
+// this is reffering to the string of "hello"
+// we can even call built in function of the class of String for example toUpperCase() and have it do the same thing. 
 
