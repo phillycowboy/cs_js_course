@@ -87,4 +87,4 @@ console.log(arr);
 
 // so certain data structures and even the dom have prototypes, we can find this out by typing Array.prototype and it will list all of its function in the prototype object 
 
-// PICK BACK UP SUNDAY/MONDAY YOURE GETTING THERE! 
+// pick back up tomorrow and git those commits! 
