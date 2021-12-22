@@ -34,3 +34,6 @@ const firstColor = makeColor(35,255,150);
 // console.log(hex(255, 100, 25));
 // "#ff6419"
 // "rgb(255, 100, 25)"
+
+// CONSTRUCTOR FUNCTIONS 
+
