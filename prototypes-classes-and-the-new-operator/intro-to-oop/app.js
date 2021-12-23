@@ -141,3 +141,8 @@ const color2 = new Color(0,0,0);
 
 // you should see both function defind on the prototype and not the object itself. 
 
+// *******************************
+// JS CLASSES -- SYNTACTICAL SUGAR 
+// *******************************
+
+// start here tomorrow 
