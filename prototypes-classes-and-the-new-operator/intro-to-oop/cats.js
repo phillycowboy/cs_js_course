@@ -1,6 +1,5 @@
 // Cats.JS
-
-class Cat {
+class Pet {
     constructor(name, age){
         this.name = name;
         this.age = age;
@@ -10,15 +9,19 @@ class Cat {
     }
 }
 
+
+
+class Cat extends Pet{
+    meow(){
+        return 'MEOWWWW!'
+    }
+}
+
 const monty = new Cat('monty', 9);
 
-class Dog {
-    constructor(name, age){
-        this.name = name;
-        this.age = age;
-    }
-    eat(){
-        return `${this.name} is eating!`;
+class Dog extends Pet{
+    woof(){
+        return 'WOOFFFFF!'
     }
 }
 
