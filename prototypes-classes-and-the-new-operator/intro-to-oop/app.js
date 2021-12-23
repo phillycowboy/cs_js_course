@@ -72,34 +72,34 @@ console.log("INTRO TO OOP!");
 
 // still an indiviual function so we need to define it on the prototype itself: 
 
-function Color(r,g,b){
-    this.r = r;
-    this.g = g;
-    this.b = b;
-    // this.rgb = function(){
-    //     const {r,g,b} = this;
-    //     return `rgb(${r}, ${g}, ${b})`;
-    // };
-    console.log(this);
-}
+// function Color(r,g,b){
+//     this.r = r;
+//     this.g = g;
+//     this.b = b;
+//     // this.rgb = function(){
+//     //     const {r,g,b} = this;
+//     //     return `rgb(${r}, ${g}, ${b})`;
+//     // };
+//     console.log(this);
+// }
 
-Color.prototype.rgb = function(){
-    const {r,g,b} = this;
-    return `rgb(${r}, ${g}, ${b})`;
-};
+// Color.prototype.rgb = function(){
+//     const {r,g,b} = this;
+//     return `rgb(${r}, ${g}, ${b})`;
+// };
 
-Color.prototype.hex = function(){
-    const {r,g,b} = this;
-    return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
-}
+// Color.prototype.hex = function(){
+//     const {r,g,b} = this;
+//     return '#' + ((1 << 24) + (r << 16) + (g << 8) + b).toString(16).slice(1);
+// }
 
-Color.prototype.rgba = function(a=1.0){
-    const {r,g,b} = this;
-    return `rgba(${r}, ${g}, ${b}, ${a})`
+// Color.prototype.rgba = function(a=1.0){
+//     const {r,g,b} = this;
+//     return `rgba(${r}, ${g}, ${b}, ${a})`
 
-}
+// }
 
-const color1 = new Color(60,255,60);
+// const color1 = new Color(60,255,60);
 // function calls and their results 
 // color1.rgb = 'rgb(60, 255, 60)'
 // color1.hex = '#3cff3c'
@@ -109,7 +109,7 @@ const color1 = new Color(60,255,60);
 // document.body.style.backgroundColor = color1.rgb()
 // 'rgb(60, 255, 60)'
 // and it should change! 
-const color2 = new Color(0,0,0);
+// const color2 = new Color(0,0,0);
 
 // now we have rgb not defined on the object itself but in the prototype of the Color class and it should look like this as opposed to above: 
 
@@ -145,4 +145,23 @@ const color2 = new Color(0,0,0);
 // JS CLASSES -- SYNTACTICAL SUGAR 
 // *******************************
 
-// start here tomorrow 
+// class syntax with the class keyword 
+
+class Color {
+    // a function that will execute immeaditately when a new color is created.
+    constructor(r,g,b,name){
+        this.r = r;
+        this.g = g;
+        this.b = b;
+        this.name = name;
+    }
+    // method on every color but not the instances
+    greet(){
+        return `Hello from the color ${this.name}`;
+    }
+}
+
+const c1 = new Color(255,67,89, 'tomato');
+const c2 = new Color(255,255,255, 'white');
+// rgb(255,67,89)
+// rgb(255,255,255)
